@@ -55,8 +55,8 @@
 	document.forms['selectSkin'].newSkin.selectedIndex = 0
 //--></script><div class="menuNav">
 
-<div class='navPrev'><a href='curscss.php@seccio=3&amp;capitol=0.html' title='Pàgina anterior'>&lt;</a></div>
-<div class='navNext'><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=3&amp;amp;capitol=0.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=3&amp;amp;capitol=2&amp;amp;subcapitol=1.html' title='Pàgina següent'>&gt;</a></div>
 <div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
 </div>
 
@@ -69,7 +69,7 @@
 
 <!-- 1.1. Sintaxi -->
 <h3>1.1. Sintaxi</h3>
-<p>Fem un breu repàs de la sintaxi CSS relacionada amb les propietats, que ja vam veure a la Secció 1 apartat 2: '<a href="curscss.php@seccio=1&amp;capitol=2.html">Elements d'un <i>style sheet</i></a>'</p>
+<p>Fem un breu repàs de la sintaxi CSS relacionada amb les propietats, que ja vam veure a la Secció 1 apartat 2: '<a href="curscss.php@seccio=1&amp;amp;capitol=2.html">Elements d'un <i>style sheet</i></a>'</p>
 <p>Un <i>style sheet</i> està format per un seguit de <em>sentències</em>. Cada sentència consta d'un <em>selector</em> i un <em>bloc de declaracions</em> delimitat per claus, <b>{</b> <b>}</b>. Al seu torn, el bloc de declaracions està format per una o més <em>declaracions</em> separades per punt i coma. Centrem-nos ara en la sintaxi d'una declaració.</p>
 <p>Com ja deus saber, una declaració està formada per una <em>propietat</em> i un <em>valor</em> separats per dos punts.</p>
 
@@ -107,7 +107,7 @@ propietat<b>:</b> valor1<b>,</b> valor2<b>,</b> ... <b>,</b> valor n<b>;</b>
 	</li>
 </ul>
 
-<p>En veurem exemples a l'apartat 2 '<a href="curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html">Propietats relacionades amb el color i el fons</a>'.</p>
+<p>En veurem exemples a l'apartat 2 '<a href="curscss.php@seccio=3&amp;amp;capitol=2&amp;amp;subcapitol=1.html">Propietats relacionades amb el color i el fons</a>'.</p>
 
 
 <!-- 1.3. Longituds -->
@@ -162,21 +162,21 @@ propietat<b>:</b> valor1<b>,</b> valor2<b>,</b> ... <b>,</b> valor n<b>;</b>
 <h3 class="top3em">1.5. Percentatges</h3>
 <p>Els percentatges en CSS s'indiquen mitjançant un número immediatament seguit del signe <strong>%</strong>. Com en el cas de les longituds, segons la propietat a la que afectin poden ser negatius.</p>
 <p>Els percentatges són sempre relatius a un altre valor, generalment una longitud. Cada propietat que admet percentatges definex quin és el valor al qual faran referència. Aquest valor pot ser el d'una altra propietat del mateix element, o bé el d'una propietat de l'element pare. Veurem exemples de seguida, com ara a les propietats <span class="propietat">font-size</span>, <span class="propietat">text-indent</span> o <span class="propietat">margin</span>.</p>
-<p>Hem vist a la Secció 1 apartat 6 '<a href="curscss.php@seccio=1&amp;capitol=6.html">Element pare, element fill i herència</a>' que moltes de les propietats són heretades pels elements fill. En el cas dels percentatges quan la propietat s'hereta el que s'hereta no és el percentatge en sí, sinó el <em>valor computat</em>, és a dir, el valor de longitud resultant d'aplicar el percentatge. Suposem que tenim tres elements A, B i C, i que B és fill de A i C és fill de B. Si A té una mida de font de 20px i B té una mida de font del 50% (és a dir, 10px), quina serà la mida de font de C? Si C heretés el valor del percentatge, tindria un 50% sobre la mida de font de B, i resultaria un total de 5px. Però el que s'hereta és el valor computat de B, és a dir, els 10px.</p>
+<p>Hem vist a la Secció 1 apartat 6 '<a href="curscss.php@seccio=1&amp;amp;capitol=6.html">Element pare, element fill i herència</a>' que moltes de les propietats són heretades pels elements fill. En el cas dels percentatges quan la propietat s'hereta el que s'hereta no és el percentatge en sí, sinó el <em>valor computat</em>, és a dir, el valor de longitud resultant d'aplicar el percentatge. Suposem que tenim tres elements A, B i C, i que B és fill de A i C és fill de B. Si A té una mida de font de 20px i B té una mida de font del 50% (és a dir, 10px), quina serà la mida de font de C? Si C heretés el valor del percentatge, tindria un 50% sobre la mida de font de B, i resultaria un total de 5px. Però el que s'hereta és el valor computat de B, és a dir, els 10px.</p>
 
 <hr />
 
-<p>Durant tota aquesta secció i la propera, sovint es farà referència a aquest apartat, com ara cada vegada que una propietat admeti valors de longitud. Al llarg del text les paraules <a href="curscss.php@seccio=3&amp;capitol=1.html#color" class="referencia">color</a>, <a href="curscss.php@seccio=3&amp;capitol=1.html#longitud" class="referencia">longitud</a>, <a href="curscss.php@seccio=3&amp;capitol=1.html#url" class="referencia">adreça</a> i <a href="curscss.php@seccio=3&amp;capitol=1.html#percentatge" class="referencia">percentatge</a> escrites com les veus aquí indiquen un enllaç cap a l'explicació corresponent. Si després d'utilitzar algun d'aquests enllaços vols tornar a la pàgina on eres, clica el botó 'Retrocedir' del teu navegador. En alguns navegadors les tecles 'esborrar' (<i>backspace</i>) o bé 'ALT+esquerra' tenen també aquesta funció.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html'>2. Propietats relacionades amb el color i el fons (<i>background</i>): color</a></div>
+<p>Durant tota aquesta secció i la propera, sovint es farà referència a aquest apartat, com ara cada vegada que una propietat admeti valors de longitud. Al llarg del text les paraules <a href="curscss.php@seccio=3&amp;capitol=1.html#color" class="referencia">color</a>, <a href="curscss.php@seccio=3&amp;capitol=1.html#longitud" class="referencia">longitud</a>, <a href="curscss.php@seccio=3&amp;capitol=1.html#url" class="referencia">adreça</a> i <a href="curscss.php@seccio=3&amp;capitol=1.html#percentatge" class="referencia">percentatge</a> escrites com les veus aquí indiquen un enllaç cap a l'explicació corresponent. Si després d'utilitzar algun d'aquests enllaços vols tornar a la pàgina on eres, clica el botó 'Retrocedir' del teu navegador. En alguns navegadors les tecles 'esborrar' (<i>backspace</i>) o bé 'ALT+esquerra' tenen també aquesta funció.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=3&amp;amp;capitol=2&amp;amp;subcapitol=1.html'>2. Propietats relacionades amb el color i el fons (<i>background</i>): color</a></div>
 </div><!-- EOf main2 -->
 </div><!-- EOf main -->
 
 <div id="footer">
 
-<div class='navPrev'><a href='curscss.php@seccio=3&amp;capitol=0.html' title='Pàgina anterior'>&lt;</a></div>
-<div class='navNext'><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=3&amp;amp;capitol=0.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=3&amp;amp;capitol=2&amp;amp;subcapitol=1.html' title='Pàgina següent'>&gt;</a></div>
 <div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
 <div id="footer2">
-<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+<strong><a href="index.php.html" style="text-decoration:none;">CSS en català</a></strong><br />
 Darrera actualització: 11 de gener de 2004<br /><br />
 
 &copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
