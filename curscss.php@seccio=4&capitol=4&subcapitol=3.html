@@ -55,8 +55,8 @@
 	document.forms['selectSkin'].newSkin.selectedIndex = 0
 //--></script><div class="menuNav">
 
-<div class='navPrev'><a href='curscss.php@seccio=4&amp;amp;capitol=4&amp;amp;subcapitol=2.html' title='Pàgina anterior'>&lt;</a></div>
-<div class='navNext'><a href='curscss.php@seccio=4&amp;amp;capitol=4&amp;amp;subcapitol=4.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=4%26capitol=4%26subcapitol=2.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4%26capitol=4%26subcapitol=4.html' title='Pàgina següent'>&gt;</a></div>
 <div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
 </div>
 
@@ -70,9 +70,9 @@
 
 <p>Els elements amb <span class="propietat">position</span>: <span class="clau">absolute</span> es comporten naturalment d'acord amb l'<em>esquema de posicionament absolut</em>.</p>
 
-<p>En l'esquema de posicionament absolut l'element es treu totalment del fluxe normal, de forma que els elements que el segueixen es comporten com si no existís. L'element absolutament posicionat es visualitza aleshores repecte el seu bloc contenidor, que correspon a l'<em>àrea padding de l'element avantpassat posicionat més proper</em>. Si no n'hi ha cap, aleshores el bloc contenidor és l'àrea de contingut de l'element arrel (<span class="element">HTML</span>). Fixa't que a diferència dels elements no posicionats absolutament, el bloc contenidor inclou l'àrea padding. En veurem un exemple a l'apartat següent, '<a href="curscss.php@seccio=4&amp;amp;capitol=4&amp;amp;subcapitol=4.html">Exemple de posicionament absolut: un layout senzill</a>'</p>
+<p>En l'esquema de posicionament absolut l'element es treu totalment del fluxe normal, de forma que els elements que el segueixen es comporten com si no existís. L'element absolutament posicionat es visualitza aleshores repecte el seu bloc contenidor, que correspon a l'<em>àrea padding de l'element avantpassat posicionat més proper</em>. Si no n'hi ha cap, aleshores el bloc contenidor és l'àrea de contingut de l'element arrel (<span class="element">HTML</span>). Fixa't que a diferència dels elements no posicionats absolutament, el bloc contenidor inclou l'àrea padding. En veurem un exemple a l'apartat següent, '<a href="curscss.php@seccio=4%26capitol=4%26subcapitol=4.html">Exemple de posicionament absolut: un layout senzill</a>'</p>
 
-<p class="nota"><span class="underlined">Nota</span>: Quan vàrem parlar dels <a href="curscss.php@seccio=4&amp;amp;capitol=1&amp;amp;subcapitol=2.html">blocs contenidors</a> vaig fer-ne una definició aproximada, que no s'adeia amb els elements absolutament posicionats. Ara pots veure clarament la diferència: aleshores vaig dir que el bloc contenidor "<i>correspon concretament a l'àrea de contingut de l'element bloc avantpassat més proper</i>". En el cas d'elements posicionats absolutament, cal afegir la condició 'posicionat' a l'element avantpassat, i canviar 'àrea de contingut' per 'àrea padding'.</p>
+<p class="nota"><span class="underlined">Nota</span>: Quan vàrem parlar dels <a href="curscss.php@seccio=4%26capitol=1%26subcapitol=2.html">blocs contenidors</a> vaig fer-ne una definició aproximada, que no s'adeia amb els elements absolutament posicionats. Ara pots veure clarament la diferència: aleshores vaig dir que el bloc contenidor "<i>correspon concretament a l'àrea de contingut de l'element bloc avantpassat més proper</i>". En el cas d'elements posicionats absolutament, cal afegir la condició 'posicionat' a l'element avantpassat, i canviar 'àrea de contingut' per 'àrea padding'.</p>
 
 <p>Dit d'una altra manera, un element posicionat estableix el bloc contenidor dels seus descendents posicionats absolutament. Per exemple, un element A2 posicionat dins un element A1 no posicionat té com a bloc contenidor no l'element A1, sinó el seu avantpassat posicionat més proper. Si en canvi a A1 li assignem un valor de <span class="propietat">position</span> diferent de <span class="clau">static</span>, passàra a establir el bloc contenidor d'A2.</p>
 
@@ -157,7 +157,7 @@ border: 2px solid #406b97;
 }
 </pre>
 
-<p class="nota"><span class="underlined">Nota</span>: Recordes els <a href="curscss.php@seccio=2&amp;amp;capitol=4.html" title="Secció 2 capítol 4: 'Selectors contextuals'">selectors contextuals</a>? La segona declaració afecta a tots els <span class="element">A</span> que estiguin dins un element amb id 'header'.</p>
+<p class="nota"><span class="underlined">Nota</span>: Recordes els <a href="curscss.php@seccio=2%26capitol=4.html" title="Secció 2 capítol 4: 'Selectors contextuals'">selectors contextuals</a>? La segona declaració afecta a tots els <span class="element">A</span> que estiguin dins un element amb id 'header'.</p>
 
 <div class="exempleHTML">
 &lt;<span class="element">DIV</span> id="header"&gt;<br />
@@ -186,14 +186,14 @@ Free Music<br />
 	<li>Qualsevol element amb <span class="propietat">position</span>: <span class="clau">absolute</span> (i també <span class="clau">fixed</span>) passa a ser un element de bloc! Així doncs es comporten igual un <span class="element">DIV</span> o un <span class="element">A</span> si estan absolutament posicionats. Ho pots comprovar a l'exemple anterior, que té un link posicionat.</li>
 	<li>Sovint combinaràs les propietats <span class="propietat">width</span> i <span class="propietat">height</span> amb el posicionament absolut. Com que les dimensions dels elements absolutament posicionats s'adapten per defecte al contingut, possiblement vulguis establir mides de forma explícita per controlar-ne totalment l'aspecte.</li>
 </ul>
-<div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=4&amp;amp;capitol=4&amp;amp;subcapitol=4.html'>4. Esquemes de posicionament: Exemple de posicionament absolut: un <i>layout</i> senzill</a></div>
+<div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=4%26capitol=4%26subcapitol=4.html'>4. Esquemes de posicionament: Exemple de posicionament absolut: un <i>layout</i> senzill</a></div>
 </div><!-- EOf main2 -->
 </div><!-- EOf main -->
 
 <div id="footer">
 
-<div class='navPrev'><a href='curscss.php@seccio=4&amp;amp;capitol=4&amp;amp;subcapitol=2.html' title='Pàgina anterior'>&lt;</a></div>
-<div class='navNext'><a href='curscss.php@seccio=4&amp;amp;capitol=4&amp;amp;subcapitol=4.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=4%26capitol=4%26subcapitol=2.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4%26capitol=4%26subcapitol=4.html' title='Pàgina següent'>&gt;</a></div>
 <div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
 <div id="footer2">
 <strong><a href="index.php.html" style="text-decoration:none;">CSS en català</a></strong><br />
