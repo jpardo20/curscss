@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 1, Capítol 2: Elements d'un style sheet</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=1&amp;capitol=2.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=1&amp;capitol=2.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=1.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=1&amp;capitol=3.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 1: Primeres passes</h1>
+	
+<h2>2. Elements d'un style sheet</h2><!--<h2>2. Elements d'un <i>style sheet</i></h2>-->
+
+<h3>Sentència = selector + bloc de declaracions</h3>
+<p>Un <i>style sheet</i> està format per un seguit de <em>sentències</em> (<i>statements</i>). Cada sentència es compon d'un <em>selector</em> i d'un <em>bloc de declaracions</em> (<i>declaration block</i>).</p>
+<ul>
+  <li><strong>Selector</strong>: identifica els elements HTML als quals afectarà la sentència.</li>
+  <li><strong>Bloc de declaracions</strong>: indica al navegador com ha de representar els elements seleccionats, és a dir, quines seran les propietats d'aquests elements. El bloc de declaracions es tanca entre les claus <strong>{</strong> i <strong>}</strong>.</li>
+</ul>
+
+<pre class="codi"><span class="element">P</span> { font-size: 1px; font-color: blue; }</pre>
+<p class="comentari">A la sentència anterior <span class="element">P</span> és el selector i tota la resta el bloc de declaracions.</p>
+
+
+<h3 class="top3em">Declaració = propietat + valor</h3>
+<p>Un bloc de declaracions està format per una o més <em>declaracions</em>, separades per punt i coma. La sintaxi d'una declaració és:</p>
+<p class="pseudocodi">propietat<strong>:</strong> valor<strong>;</strong></p>
+<p>Les propietats estan definides per l'especificació CSS, i les veurem amb detall a la Secció 3. A continuació, i separat de la propietat per dos punts, posem el seu valor. Finalment afegim punt i coma (opcional a la darrera declaració del bloc). Un exemple més complet:</p>
+
+<pre class="codi">
+<span class="element">P</span> {
+<span class="propietat">font-size</span>: 10px;
+<span class="propietat">color</span>: #000000;
+<span class="propietat">font-family</span>: Verdana }
+</pre>
+<p class="comentari">El bloc de declaracions està format per tres declaracions corresponents a les propietats <span class="propietat">font-size</span>, <span class="propietat">color</span> i <span class="propietat">font-family</span>. Opcionalment la darrera declaració podria acabar en punt i coma.</p>
+
+<div class="centered">
+<img alt="Selector i bloc de declaracions" src="imatges/1_2_parts1.gif" height="200" width="260" style="margin-right:10px;" />
+<img alt="Declaració, propietat i valor" src="imatges/1_2_parts2.gif" height="200" width="240" style="margin-left:10px;" />
+</div>
+
+<p>De forma similar a l'HTML, a l'escriure un <i>style sheet</i> podem deixar tants espais i canvis de línia com volguem. L'únic cas en què no es poden deixar espais és entre un valor i les corresponents unitats (cas de dur-ne), com ara 10<span class="unitat">px</span> (px = píxels) a l'exemple. En aquest curs s'utilitza una disposició dels elements de la sentència que recorda als blocs de C o Java, però seria el mateix escriure-ho tot en una sola línia:</p>
+
+<pre class="codi2">
+<span class="element">P</span> {<span class="propietat">font-size</span>:10<span class="unitat">px</span>;<span class="propietat">color</span>:#000000;<span class="propietat">font-family</span>:Verdana;}
+</pre>
+
+<p>I en una altra disposició una mica més estranya, però equivalent a les anteriors:</p>
+
+<pre class="codi2">
+<span class="element">P</span>
+{
+     <span class="propietat">font-size</span>  :  10<span class="unitat">px</span>  ;
+
+     <span class="propietat">color</span>  :  #000000  ;
+
+     <span class="propietat">font-family</span>  :  Verdana  ;
+}
+</pre>
+
+<p>No en tens prou? D'acord, encara una altra alternativa... <span class="smiley">;)</span></p>
+<pre class="codi2">
+<span class="element">    P</span>
+{
+   <span class="propietat">font-size</span>        :
+
+
+
+10<span class="unitat">px</span>                     ;<span class="propietat">color</span>
+              :               #000000 ;
+
+
+
+
+   <span class="propietat">font-family</span>    :Verdana
+;}
+</pre>
+<p>Estrany, però correcte!</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=1&amp;capitol=3.html'>3. Associar style sheets a un document HTML: <strong>Linking</strong> i <strong>Embedding</strong></a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=1.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=1&amp;capitol=3.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

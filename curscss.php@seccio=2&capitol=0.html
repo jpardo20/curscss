@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 2, Capítol 0: Descripció de la secció</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=2&amp;capitol=0.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=2&amp;capitol=0.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=6.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=1.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1>Secció 2: Selectors</h1>
+	
+<div class="apartat-independent">Descripció de la secció</div>
+<p>A la Secció 1 hem vist que les sentències d'un <i>style sheet</i> es componen d'un selector, que determina a quins elements HTML afectarà l'estil, i d'un bloc de declaracions, que defineix l'estil en sí. En aquesta secció tractarem els diferents tipus de selectors disponibles. El que probablement distingeix un bon <i>style sheet</i> és precisament l'ús acurat dels selectors.</p>
+<p>Com pots veure a l'índex n'hi ha un bon grapat, alguns dels quals són bastant específics. Jo et recomano centrar-te per ara en els selectors CSS1, i deixar els selectors CSS2 per quan tinguis una certa experiència amb <i>style sheets</i> i vulguis aprofundir en conceptes més avançats. Si els reuneixo tots aquí és només per una qüestió d'organització. Si ets molt impacient, pots limitar-te als apartats 1 i 2 (selectors bàsics i de classe), i passar directament a la secció següent ('Propietats'). Això sí, tard o d'hora hauràs de tornar a aquesta secció.</p>
+
+<div class="titolLlista">Selectors CSS1</div>
+<ol class="index">
+	<li><a href="curscss.php@seccio=2&amp;capitol=1.html">Selectors bàsics: elements HTML</a></li>
+	<li><a href="curscss.php@seccio=2&amp;capitol=2.html">Selectors de classe</a></li>
+	<li><a href="curscss.php@seccio=2&amp;capitol=3.html">Selectors ID</a></li>
+	<li><a href="curscss.php@seccio=2&amp;capitol=4.html">Selectors contextuals</a></li>
+	<li><a href="curscss.php@seccio=2&amp;capitol=5.html">Selectors pseudoclasse: links</a></li>
+	<li><a href="curscss.php@seccio=2&amp;capitol=6.html">Selectors pseudoelement</a></li>
+	<li><a href="curscss.php@seccio=2&amp;capitol=7.html">Grups de selectors</a></li>
+</ol>
+
+<div class="titolLlista">Selectors CSS2</div>
+<ol start="8" class="index">
+	<li class="pendent">Selectors pseudoclasse dinàmics</li>
+	<li class="pendent">Selectors psuedoclasse: llenguatge</li>
+	<li class="pendent">Selectors fill (<i>child selectors</i>)</li>
+	<li class="pendent">Selectors primer fill (<i>first child selectors</i>)</li>
+	<li class="pendent">Selectors adjacents</li>
+	<li class="pendent">Selectors d'atribut</li>
+</ol>
+<div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=2&amp;capitol=1.html'>1. Selectors bàsics: elements HTML</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=6.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=1.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

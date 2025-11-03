@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 2, Capítol 5: Selectors pseudoclasse: links</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=2&amp;capitol=5.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=2&amp;capitol=5.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=2&amp;capitol=4.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=6.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 2: Selectors</h1>
+	
+<h2>5. Selectors pseudoclasse: links</h2><!--<h2>5. Selectors pseudoclasse: links</h2>-->
+
+<p>Aquest és un tipus de selector una mica més especial que els anteriors. En realitat no serveix per seleccionar un element, sinó un element en un <em>estat determinat</em>. D'aquí el nom de pseudoclasse. De fet és un tipus de selector específic per a l'element <span class="element">A</span> (link).</p>
+
+<p>La sintaxi és potser la més especial que hem vist fins ara, però és igualment simple: només hem d'escriure l'element <span class="element">A</span> seguit de dos punts (que indiquen que és pseudoclasse), i la paraula clau que correspon a l'estat del link:
+<ul>
+	<li><span class="element">link</span> - l'estat 'normal'</li>
+	<li><span class="element">visited</span> - link que ja ha estat visitat</li>
+	<li><span class="element">active</span> - link en el que estem fent clic</li>
+	<li><span class="element">hover</span> - correspon al fet de moure el punter del mouse per sobre del link</li>
+</ul>
+</p>
+
+<pre class="codi">
+<span class="element">A:link</span> { color: red; }
+<span class="element">A:visited</span> { color: maroon; }
+<span class="element">A:active</span> { color: black; }
+<span class="element">A:hover</span> { color: red; text-decoration: underline; }
+</pre>
+
+<p>De fet és un concepte semblant als atributs <span class="propietat">link</span>, <span class="propietat">alink</span> i <span class="propietat">vlink</span> de l'element <span class="element">BODY</span>, que ens permetien determinar el color d'aquests tres estats dels links. La diferència és que ara podrem triar no només el color, sinó qualsevol altra propietat! (subratllat, negreta, color de fons...). A més, disposem de la opció <span class="element">A:hover</span>, que obre encara més possibilitats.</p>
+
+<p class="nota"><span class="underlined">Nota</span>: el selector <span>hover</span> no està suportat per Netscape 4.x. Com ja deus saber, aquest navegador té una capacitat de representació de CSS més que limitada <span class="smiley">:-/</span></p>
+
+<p>Com que aquests selectors són específics per als links, podem estalviar-nos la <span class="element">A</span> i escriure senzillament <span class="propietat">:link</span>, <span class="propietat">:visited</span>, etc.</p>
+
+<p>Podem combinar selectors pseudoclasse amb selectors de classe, selectors contextuals i de fet qualsevol altre tipus de selector. A continuació et proposo alguns exemples, però el millor és experimentar una mica. Si ets creatiu podràs aconseguir que els teus links siguin ben particulars.</p>
+
+<pre class="codi">
+<span class="element">A</span> { text-decoration: none; }
+<span class="element">A:visited</span> { color: olive; }
+<span class="element">A:active</span> { color: green; }
+
+<span class="element">A:hover</span> { text-decoration: underline; }
+
+<span class="element">A.menu:hover</span> {
+text-decoration: underline overline; }
+
+P#titol <span class="element">A:hover</span> {
+border-style: solid; border-width:1px; padding:4px;
+text-decoration: none; }
+</pre>
+<p class="comentari">Recorda que amb els selectors pseudoclasse les <span class="element">A</span> es poden ometre.</p>
+
+<p>Comento una mica l'exemple anterior. La primera sentència fa que tots els links estiguin sense subratllar (per defecte, la majoria de navegadors els subratllen). Com que no utilitzo cap pseudoclasse, aquesta propietat s'aplicarà independentment de l'estat del link sempre que no especifiquem el contrari. Les dues sentències següents defineixen el color dels estats 'visited' i 'active'.</p>
+<p>A continuació defineixo tres tipus de links, però només pel seu estat 'hover'. És a dir, els links en estat 'visited' i 'active' continuaran amb els colors que hem definit anteriorment i sense subratllar. Respecte els 'hover', en principi seran subratllats (sentència 4), llevat que tinguin l'atribut class="menu", i per tant estaran subratllats (<i>underline</i>) i 'sobreratllats' (<i>overline</i>) alhora (sentència 5), o que estiguin inclosos en l'element P amb id="titol" (sentència 6), i en aquest darrer cas apareixerà una 'caixa' al voltant del link. Uf, enrevessat oi? Si vols clica aquest link per <a href="javascript:void(null)" onclick="window.open('exemples/Exemple_2-5.html','exemple')">veure com funciona l'exemple</a>.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=2&amp;capitol=6.html'>6. Selectors pseudoelement</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=2&amp;capitol=4.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=6.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

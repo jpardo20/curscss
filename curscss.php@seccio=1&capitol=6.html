@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 1, Capítol 6: Element pare, element fill i herència</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=1&amp;capitol=6.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=1&amp;capitol=6.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=0.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=5.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 1: Primeres passes</h1>
+	
+<h2>6. Element pare, element fill i herència</h2><!--<h2>6. Element pare, element fill i herència</h2>-->
+
+<p>Un dels conceptes importants relacionats amb CSS és el d'herència. Per entendre'l bé caldrà abans conèixer el significat dels termes element pare i element fill. En lloc d'una definició estricta he optat per mostrar aquests conceptes de forma més intuitiva, a partir d'un exemple senzill.</p>
+<p>Un document HTML està format per un seguit d'elements que s'organitzen en forma d'arbre. A l'exemple següent, el document està format pels elements A, BODY, HEAD, HTML, IMG, P i TITLE, els quals s'organitzen en l'arbre que pots veure a la figura 1.</p>
+
+<pre class="codi">
+<span class="element">&lt;HTML&gt;
+
+  &lt;HEAD&gt;
+    &lt;TITLE&gt;</span>Pàgina base<span class="element">&lt;/TITLE&gt;
+  &lt;/HEAD&gt;
+
+  &lt;BODY&gt;
+    &lt;H1&gt;</span>Exemple de pàgina base<span class="element">&lt;/H1&gt;
+    &lt;IMG src="i1.gif"&gt;
+    &lt;P&gt;</span>Paràgraf amb <span class="element">&lt;A href="..."&gt;</span>un<span class="element">&lt;/A&gt;
+       </span>i <span class="element">&lt;A href="..."&gt;</span>dos<span class="element">&lt;/A&gt; </span>links<span class="element">&lt;/P&gt;
+  &lt;/BODY&gt;
+
+&lt;/HTML&gt;</span>
+</pre>
+
+<div style="margin-left: 50px;"><img src="imatges/1_6_arbre.gif" alt="Estructura d'arbre" width="381" height="285" /><br />
+<span class="figura">Figura 1</span></div>
+<p class="nota"><span class="underlined">Nota</span>: sovint s'acostuma a representar les estructures d'arbre de forma invertida, amb l'arrel (en aquest cas l'element HTML) al nivell superior, i les branques estenent-se cap a baix.</p>
+
+<p>L'element HTML (element arrel o <i>root element</i>) conté dos elements, HEAD i BODY. Direm que HEAD i BODY són els <em>elements fill</em> d'HTML, i de forma anàloga que HTML és l'<em>element pare</em> de HEAD i de BODY. Al seu torn, HEAD és l'element pare de TITLE, i aquest és fill de HEAD, però no és pare de cap altre element. Com pots comprovar, tots els elements llevat d'HTML tenen un únic element pare, i poden tenir 0, 1 o més fills.</p>
+<p>Amb altres paraules, si tenim dos elements un dels quals està contingut en l'altre, direm que l'element contenidor és el <em style="color:#009933">pare</em> i l'element contingut és el <em style="color:#ff6633">fill</em>.</p>
+
+<p style="color:#009933">&lt;X&gt;L'element pare conté a <span style="color:#ff6633">&lt;Y&gt;l'element fill&lt;/Y&gt;</span>.&lt;/X&gt;</p>
+
+<p>Tornem a l'exemple. Fixa't en l'element P. És fill de BODY i alhora té dos fills, els dos elements A. És perfectament possible que un element tingui molts fills del mateix tipus. Pensa en una pàgina amb un títol i molts paràgrafs; l'element BODY tindrà un fill H1 i molts fills P.</p>
+<p>Creus que els elements A són fills de BODY? Podríem pensar que sí, ja que són fills d'un fill de BODY. Però estrictament parlant no diem que són fills, sinó <em>descendents</em>. Tots els elements d'una pàgina web són descendents d'HTML. De forma similar direm que HTML és l'<em>avantpassat</em> (en anglès <i>ancestor</i>) de A. Els elements fills són també descendents, però no a l'inrevés, i el mateix passa amb pares i avantpassats.</p>
+
+<p>Arribats a aquest punt és hora de parlar de l'herència a CSS. És un concepte força intuitiu, però val la pena entendre'l bé. La idea fonamental és que <em>algunes propietats s'hereten</em>. No sembla tan espectacular oi? Vegem què significa exactament la frase anterior. Que un element hereti una determinada propietat significa que pren el valor que tenia en l'element pare. Per exemple, suposem que assignem a l'element BODY la propietat '<span class="monospaced">color:blue</span>'. Si aquesta propietat s'hereta, tots els seus fills tindran automàticament la propietat 'color' amb el valor 'blue' (blau), encara que no l'escrivim explícitament a l'<i>style sheet</i>. Ara bé, si en algun dels elements fills de BODY especifiquem un altre valor per la propietat '<span class="monospaced">color</span>', se sobreescriurà el valor heretat. D'aquesta forma podríem decidir que un determinat element fill de BODY fos de color vermell assignant-li la propietat '<span class="monospaced">color:red</span>'.</p>
+<p>Si un element hereta una propietat del seu pare, els seus fills també l'hereten, i així successivament, sempre i quan no especifiquem un altre valor en algun dels elements. En aquest cas serà el nou valor el que heretin els fills d'aquest element.</p>
+
+<p>Fins aquí no sembla gaire complicat, oi? I no ho és, el problema és que només algunes de les propietats s'hereten. Quan una propietat no s'hereta pren el seu valor per defecte, independentment de quin sigui el seu valor en l'element pare. Un exemple és la propietat '<span class="monospaced">border</span>', que dibuixa les vores que envolten un element. Encara que l'element BODY tingui les vores vermelles, els seus fills no hereten aquest valor, sinó que prenen el valor per defecte, que en el cas de '<span class="monospaced">border</span>' és 'sense vores'. Cada propietat té el seu corresponent valor per defecte.</p>
+<p>A l'especificació CSS, la definició de cada propietat indica, a més del valor per defecte, si aquesta s'hereta o no. Ara bé, sovint ens podrem simplement guiar per la lògica; en l'exemple anterior, si a l'element BODY li assignem la propietat '<span class="monospaced">color:blue</span>' volem dir que tot el text del document ha de mostrar-se amb color blau, mentre que la propietat '<span class="monospaced">border</span>' sembla més raonable traduir-la per "les vores de BODY (és a dir, de tot el document) han de ser vermelles" que no pas per "les vores de BODY són vermelles, i també ho són les de cadascun dels elements fills de BODY". En aquest curs procuro especificar el comportament de l'herència per a la majoria de propietats, especialment en els casos més dubtosos.</p>
+
+
+<hr />
+
+<p>Fins aquí la Secció 1. Has après de quins elements consta un <i>style sheet</i>, i com s'ha de fer per associar-lo a un document HTML. També has vist els conceptes d'herència i elements pare i fill. Encara no pots fer gaire coses, però. Si vols, pots mirar <a href="javascript:void(null)" onclick="window.open('exemples/Exemple_1-fi.html','exemple')">aquest exemple</a>, on es posen en pràctica els conceptes que has vist fins ara en un <i>style sheet</i> real. No et preocupis massa si hi ha coses que no entens, tot es veurà més endavant.</p>
+
+<p class="properaseccio">La Secció 2 explica els diferents tipus de selectors. En general és de caire bastant teòric, i alguns dels apartats que es tracten són bastant especialitzats. Si no tens prou paciència, pots mirar només els apartats 1 i 2, i saltar directament a la Secció 3: 'Propietats'.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=2&amp;capitol=0.html' class='seccio'>Secció 2: Selectors</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=5.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=0.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 0, Capítol 5: Signes convencionals</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=0&amp;capitol=5.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=0&amp;capitol=5.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navNext'><a href='curscss.php@seccio=1&amp;capitol=0.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=0&amp;capitol=4.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 0: Introducció</h1>
+	
+<h2>5. Signes convencionals</h2><!--<h2>5. Signes convencionals</h2>-->
+
+<p>En aquest curs, especialment a les seccions III i IV, s'utilitzen diferents colors i fonts per distingir els elements del llenguatge CSS:</p>
+<!-- FALTA: treure l'inline style!!!!!!! -->
+<ul>
+	<li><span class="propietat">propietats</span> (en el text)</li>
+	<li><span class="propietat-tipus-codi">propietats</span> (en els exemples)</li>
+	<li><span class="propietat-primera">propietats</span> (quan és la primera aparició, generalment al títol)</li>
+	<li><span class="clau">valors</span> (paraules clau)</li>
+	<li><span class="unitat">unitats</span> (com ara <span class="unitat">px</span>, <span class="unitat">em</span> o <span class="unitat">%</span>)</li>
+	<li><span class="tipus">tipus</span> (tipus o grups de propietats, com ara les propietats <span class="tipus">padding</span>)</li>
+</ul>
+<p>No sempre s'utilitzarà aquest codi; de vegades es marcaran d'aquesta forma només alguns elements per destacar-los d'altres. Per exemple, en un fragment de codi amb diverses propietats que pretengui il·lustrar la propietat <span class="propietat">font-size</span>, pot ser que només aquesta estigui marcada.</p>
+<p>El símbol <span class="css2">CSS2</span> significa que la propietat en qüestió és una novetat de l'especificació CSS2. Com podràs observar la majoria de propietats ja estaven presents a CSS1. Tingues en compte que algunes de les noves propietats no estan encara suportades per la majoria de navegadors.</p>
+<p>També trobraràs diferents requadres per als diferents tipus d'exemple:</p>
+
+<pre class="codi">
+Aquests són els exemples
+bàsics per a cada <span class="propietat">propietat</span>.
+</pre>
+
+<div class="resultat">
+Aquests requadres mostren com es veuria un<br />
+determinat exemple al navegador.
+</div>
+
+<br />
+
+<div class="exempleHTML">
+&lt;H1&gt;Així es veuran els fragments d'HTML.&lt;/H1&gt;<br />
+&lt;P&gt;No tenen cap color de fons, però el color del text els fa fàcilment identificables.&lt;/P&gt;
+</div>
+
+<pre class="codi2">Aquest és l'aspecte d'altres exemples, com ara
+aclariments o casos especials. Com pots observar,
+es distingeix de les explicacions per la font,
+el color de les <span class="propietat">propietats</span> i la vora.</pre>
+
+
+<div class="pregunta" style="margin-top:0px">
+<p class="pregunta">Pregunta</p>
+<p>Aquest és l'aspecte de les preguntes que t'aniré plantejant durant el curs. Fent clic a 'Solució' s'obrirà un panell amb la solució comentada. Per tancar-lo pots clicar sobre 'Tancar' (al final del panell) o bé tornar a clicar sobre 'Solució'. Prova-ho ara! Oi que fa goig? <span class="smiley">:)</span></p>
+<a class="solucio" href="javascript:popup('popup0')">Solució &gt;&gt; </a>
+	<!-- POPUP: solució -->
+	<div id="popup0" class="popup" style="width:200px;height:150px;">
+	Ara ja saps com veure la solució a les preguntes. Però abans prova de resoldre-les tu, d'acord? <span class="smiley">:)</span>
+	<br /><br />
+	<div class="centered"><a class="tancar" href="javascript:popup('popup0')">- Tancar -</a></div><br />
+	</div><!-- end POPUP -->
+</div><!-- end 'pregunta' --><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=1&amp;capitol=0.html' class='seccio'>Secció 1: Primeres passes</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=0&amp;capitol=4.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=1&amp;capitol=0.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

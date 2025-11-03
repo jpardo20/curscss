@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 4, Capítol 4: Esquemes de posicionament &gt;&gt; Fluxe normal</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=1.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=1.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=5.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=2.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 4: Posicionament CSS</h1>
+	
+<h2>4. Esquemes de posicionament</h2><!--<h2>4. Esquemes de posicionament</h2>-->
+<p>En els tres capítols anteriors hem vist els diferents tipus de caixa i les propietats que en controlen les dimensions. A partir d'ara ens centrarem en el posicionament CSS pròpiament dit.</p>
+
+<p>Les caixes generades pels elments HTML es representen d'acord amb un dels següents tres esquemes de posicionament: <em>fluxe normal</em>, <em>posicionament absolut</em> i <em>elements flotants</em> (<i>floats</i>). En aquest apartat 4 ens ocuparem dels dos primers, i veurem el darrer cas al capítol següent.</p>
+
+<p class="nota"><span class="underlined">Nota</span>: Simplificaré lleugerament algun dels conceptes per no complicar massa aquest tema. Per a un tractament més estricte el millor és accedir directament a l'<a href="http://www.w3.org/TR/CSS2/">especificació CSS</a>.</p>
+
+<h3>4.1. Fluxe normal</h3>
+
+<p>Per defecte, els elements HTML es disposen a la pàgina d'acord amb el fluxe normal. Aquesta és la situació "normal", la que hom espera quan veu una pàgina HTML.</p>
+
+<p>En el fluxe normal els elements poden pertànyer a un dels dos contexts de format següents:</p>
+
+<ul>
+	<li><strong>Context de format de bloc</strong>. Les caixes es situen una sota de l'altra, ocupant tot l'espai horitzontal disponible.</li>
+	<li><strong>Context de format <i>inline</i></strong>. Les caixes es situen una al costat de l'altra, i la seva amplada s'ajusta al contingut de l'element. </li>
+</ul>
+
+<p>Aquest és el comportament que ja hem vist anteriorment (apartat 2: '<a href="curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=1.html">Elements de bloc. Elements <i>inline</i></a>'). Però com veurem a continuació hi ha altres esquemes de posicionament que podem controlar mitjançant propietats CSS. Aquestes altres possibilitats ofereixen una gran flexibilitat a l'hora de distribuir els elements a la pàgina, i constitueixen el nucli del posicionament CSS - ja era hora, no? <span class="smiley">:)</span></p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=2.html'>4. Esquemes de posicionament: Elements posicionats: position, top, left, bottom, right</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=5.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=2.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

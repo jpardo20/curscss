@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 4, Capítol 4: Esquemes de posicionament &gt;&gt; Posicionament relatiu</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=5.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=5.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=4.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=6.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 4: Posicionament CSS</h1>
+	
+<h2>4. Esquemes de posicionament</h2><h3>4.5. Posicionament relatiu</h3>
+
+<p>El concepte de posicionament relatiu no és esencialment difícil, però sovint és objecte de confusions i malentesos. En aquest capítol intentaré explicar-ne el funcionament i les situacions en què s'utilitza normalment.</p>
+<p>Els elements posicionats relativament <em>es comporten d'acord al fluxe normal</em>. Aquesta afirmació és l'essència del posicionament relatiu, i val la pena aturar-s'hi una mica.</p>
+<p>Els elements HTML es comporten per defecte segons el fluxe normal (<span class="propietat">position</span>:<span class="clau">static</span>). Si els canviem el valor de <span class="propietat">position</span> per <span class="clau">relative</span>... continuen exactament igual! No canvia el seu esquema de posicionament i per tant tampoc ho fa la seva disposició a la pàgina.</p>
+<p>Aleshores, per a què serveix aquest valor de <span class="propietat">position</span>? La clau és que tot i seguir el fluxe normal, l'element estarà <em>posicionat</em>. I això implica que establirà el bloc contenidor per als seus fills posicionats (ho hem vist a 4.3 '<a href="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=3.html">Posicionament absolut</a>'). Aquest fet ens permet combinar el posicionament absolut amb el fluxe normal, cosa que dona una potència extra als <i>layouts</i> basats en CSS. El següent exemple il·lustra aquest fenòmen.</p>
+
+
+<h4>Exemple 1</h4>
+<p>Imaginem que tenim una pàgina web amb un curs de CSS <span class="smiley">;-)</span>. A determinats punts de l'explicació es vol insertar uns DIVs aclaridors d'alguns aspectes importants. En aquest exemple els hem assignat la classe 'pos-rel'. Però a més volem que dins d'aquests DIVs, a la cantonada superior dreta, hi hagi un llistat de links amb més informació sobre l'aclariment, que inclourem en un DIV de classe 'nota'. Com ho faríem amb CSS?</p>
+
+<pre class="codi">
+<span class="element">.pos-rel</span> {
+<span class="propietat">position</span>: <span class="clau">relative</span>;
+padding: 10<span class="unitat">px</span> 40<span class="unitat">%</span> 10<span class="unitat">px</span> 10<span class="unitat">px</span>;
+border: 1<span class="unitat">px</span> solid #333;
+background-color: #dbe1fb; }
+
+<span class="element">.pos-rel .nota</span> {
+position: absolute;
+width: 30<span class="unitat">%</span>;
+right: 5<span class="unitat">px</span>; top: 5<span class="unitat">px</span>;
+padding: 1<span class="unitat">em</span>;
+border: 1<span class="unitat">px</span> solid #333;
+background-color: #fff; }
+</pre>
+
+<p class="nota"><span class="underlined">Nota</span>: la segona sentència afecta als elements de classe 'nota' que siguin descendents d'un element de classe 'pos-rel'. Ho vàrem veure al capítol de <a href="curscss.php@seccio=2&amp;capitol=4.html" title="Secció 2, Capítol 4: 'Selectors contextuals'">selectors contextuals</a>.</p>
+
+<p>El resultat és el següent:</p>
+
+<div class="resultat">
+<div>
+<strong>[Paràgraf P1]</strong> Aquest exemple il·lustra el comportament dels elements posicionats relativament. Recordem que l'ús més habitual del posicionament relatiu és establir el bloc contenidor del seus descendents posicionats de forma absoluta. </div>
+<div style="margin: 1em 0;position: relative; padding: 10px 40% 10px 10px; border: 1px solid #333; background-color: #dbe1fb;">
+<strong>[DIV.pos-rel]</strong> Aquest DIV està posicionat relativament. Això implica que la seva disposició a la pàgina segueix el fluxe normal, i per tant es comporta com si no estés posicionat. Però en cavi estableix el bloc contenidor dels seus descendents posicionats, en aquest cas el DIV de classe 'nota'. Aquest es comporta com ho fan tots els elements amb posició absoluta: amb un desplaçament definit per 'top' i 'right' respecte el seu bloc contenidor, el qual l'estableix el seu element avantpassat posicionat més proper (el DIV de classe 'pos-rel'), i que correspon concretament a la seva àrea <i>padding</i>.
+<div style="position: absolute; width: 30%; right: 5px; top: 5px; padding: 1em; border: 1px solid #333; background-color: #fff">
+<strong>[DIV.nota]</strong> Un llistat de links:<br />Link 1<br />Link 2<br />Link 3</div></div>
+<div>
+<strong>[Paràgraf P2]</strong> Com esperàvem, aquest paràgraf es situa a continuació del DIV de classe 'pos-rel', ja que els elements posicionats relativament es comporten d'acord al fluxe normal. Però gràcies al posicionament relatiu podem establir amb precisió la posició dels seus descendents posicionats absolutament.</div>
+</div>
+
+<p>Si ets usuari d'Internet Explorer, veuràs que els resultats no són el què esperàvem. La posicio del DIV de classe 'nota' no es correcta (IE no estableix correctament el seu bloc contenidor!). I el <i>padding</i> dret del DIV de classe 'pos-rel' tampoc no es mesura de forma correcta (és massa gran). En canvi el usuaris de Mozilla, per exemple, veuran l'exemple correctament. Aquestes incompatibilitats es poden resoldre de diverses maneres, però no és l'objectiu d'aquest curs. Idealment els responsables d'IE s'encarregaran d'adequar futures versions del navegador als estàndards del W3C, del qual són paradoxalment membres. En fi...</p>
+
+<!-- PREGUNTA -->
+<div class="pregunta">
+<p class="pregunta">Pregunta</p>
+
+<p>Què passaria si la classe 'pos-rel' tingués posició absoluta? I si no en tingués?</p>
+
+<a class="solucio" href="javascript:popup('popup4-4-5')">Solució &gt;&gt; </a>
+	<!-- POPUP: solució -->
+	<div id="popup4-4-5" class="popup">
+	1) Si tingués <span class="propietat">position</span>: <span class="clau">absoltue</span>, el DIV de classe 'pos-rel' es situaria en funció del seu avantpassat posicionat més proper, i no entre els paràgrafs P1 i P2. A més seria eliminat del fluxe normal, amb la qual cosa el paràgraf P2 aniria immediatament després del paràgraf P1.<br /><br /><!-- TODO: explicar què passa si no s'estableix top,..., i que l'element queda a lloc? -->
+
+	2) Si no especifiquéssim posicionament, <span class="propietat">position</span> prendria el seu valor per defecte, <span class="clau">static</span>. El DIV de classe 'pos-rel' es situaria igual que en l'exemple, però ja no establiria el bloc contenidor del DIV de classe 'nota'. Aquest DIV es situaria respecte el seu avantpassat posicionat més proper, i si no n'hi hagués cap, respecte l'element arrel.
+	<br /><br />
+	<div class="centered"><a class="tancar" href="javascript:popup('popup4-4-5')">- Tancar -</a></div><br />
+	</div><!-- end POPUP -->
+
+</div><!-- end 'pregunta' -->
+
+<p>Em permeto insistir: l'ús més habitual del posicionament relatiu és <em>actuar com a contenidor d'elements posicionats absolutament</em>.</p>
+
+
+<h4>Posicionament relatiu i <span class="propietat">top</span>, <span class="propietat">right</span>, <span class="propietat">bottom</span>, <span class="propietat">left</span></h4>
+
+<p>He dit abans que posicionar un element relativament només serveix per establir el bloc contenidor dels seus descendents posicionats i no afecta a la disposició de l'element en si. Això no és estrictament cert quan s'utilitzen les propietats <span class="propietat">top</span>, <span class="propietat">right</span>, <span class="propietat">bottom</span>, <span class="propietat">left</span>.</p>
+
+<p>L'efecte d'aquestes propietats és el mateix que en el cas d'elements posicionats absolutament: estableixen el desplaçament de l'element respecte el seu bloc contenidor. Ara bé, així com en el posicionament absolut l'ús d'aquestes propietats és fonamental, en el posicionament relatiu rarement s'utilitzen.</p>
+
+<p>Per entendre quin és el resultat d'utilitzar-les en el posicionament relatiu pensa que l'element es situa primer segons el fluxe normal i llavors es desplaça d'aquesta posició d'acord amb els valors de <span class="propietat">top</span>, <span class="propietat">right</span>, <span class="propietat">bottom</span>, <span class="propietat">left</span>, <em>sense que es moguin els elements anterior i posterior</em>.</p>
+
+<!-- TODO: una imatge? -->
+
+<p>Aquest no és normalment un efecte útil però pot ser-ho en algun cas, i sobretot val la pena entendre'l bé per no embolicar-se quan es fan <i>layouts</i> complexes.</p>
+
+<p>Insisteixo, rarament usaràs <span class="propietat">top</span>, <span class="propietat">right</span>, <span class="propietat">bottom</span>, <span class="propietat">left</span> en elements posicionats relativament.</p>
+
+
+<div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=6.html'>4. Esquemes de posicionament: Exemple de posicionament relatiu: caixes de solució</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=4.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=6.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

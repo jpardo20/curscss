@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 2, Capítol 7: Grups de selectors</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=2&amp;capitol=7.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=2&amp;capitol=7.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navNext'><a href='curscss.php@seccio=3&amp;capitol=0.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navPrev'><a href='curscss.php@seccio=2&amp;capitol=6.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 2: Selectors</h1>
+	
+<h2>7. Grups de selectors</h2><!--<h2>7. Grups de selectors</h2>-->
+
+<p>Els grups de selectors no són en realitat selectors, sinó una manera abreujada de definir estils. Senzillament permeten assignar el <em>mateix</em> estil a diversos selectors.</p>
+
+<pre class="codi">
+<span class="element">H1, H2, H3, H4</span> {
+font-family: Trebuchet MS;
+color: olive;
+margin-left: 30px; margin-top: 40px; }
+</pre>
+
+<p>Sovint els grups de selectors s'utilitzen per establir propietats comunes a diferents elements, i després especificar aquelles propietats particulars de cada element amb el seu selector corresponent. Reprenent l'exemple anterior, podríem especificar una mida diferent per a cada títol.</p>
+
+
+<br /><br /><br />
+<hr />
+
+<br />
+
+<p class="pendent">Queden pendents els selectors introduïts a CSS2, que procuraré anar fent tant depressa com sigui possible. De tota manera les eines més importants per començar ja les tens.</p>
+
+
+<p>Fins aquí la Secció 2. Hem vist els diferents tipus de selector que tenim a la nostra disposició per assignar estils als elements d'una pàgina web. Probablement és la part conceptualment més complexa del curs, així que si ho has entès tot, el que et queda ja és tot baixada. Si no, no t'amoïnis. Amb una mica de pràctica i l'examen detallat d'exemples, segur que tot anirà quedant més clar.</p>
+
+<p class="properaseccio">A la Secció 3 entrem (per fi!) en l'ús de propietats. A partir d'ara ens ocuparem d'estudiar quines possibilitats concretes tenim a l'hora de definir els nostres estils.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=3&amp;capitol=0.html' class='seccio'>Secció 3: Propietats</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=2&amp;capitol=6.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=3&amp;capitol=0.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

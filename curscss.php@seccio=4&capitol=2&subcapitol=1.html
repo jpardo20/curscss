@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 4, Capítol 2: Tipus de caixes &gt;&gt; Elements de bloc. Elements inline</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=1.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=1.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=1&amp;subcapitol=2.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=2.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 4: Posicionament CSS</h1>
+	
+<h2>2. Tipus de caixes</h2><!--<h2>2. Tipus de caixes</h2>-->
+
+<h3>2.1. Elements de bloc. Elements <i>inline</i></h3>
+
+<p>Ja sabem que cada element HTML genera una caixa. Parlarem ara dels diferents tipus de caixa que es poden generar i de com afecten a la seva visualització en els navegadors.</p>
+
+<p>Vàrem introduir el concepte d'element de bloc i element <i>inline</i> a la introducció del curs (<a href="curscss.php@seccio=0&amp;capitol=4.html">Secció 0 apartat 4</a>). Els elements de bloc generen <em>caixes de bloc</em> (<i>bloc boxes</i>) que ocupen tot l'espai horitzontal disponible i es situen a sota de l'anterior caixa de bloc. A més, les caixes de bloc estableixen el bloc contenidor per a les caixes descendents, és a dir, aquelles que generen els seus elements descendents.</p>
+<p>Els elements inline generen <em>caixes inline</em> (<i>inline boxes</i>) que s'adapten a l'amplada del contingut i es situen a la mateixa líina que l'anterior caixa <i>inline</i>. Les caixes <i>inline</i> no estableixen el bloc contenidor per als seus descendents.</p>
+
+<!-- TODO: enllaç cap al capítol 7? -->
+
+<p>Existeixen altres tipus de caixa, com veurem de seguida, però el seu comportament és anàleg al de les caixes de bloc o les caixes <i>inline</i>. Donat que el seu ús es limita a situacions molt especials no els tractarem en aquest curs per tal de no complicar excessivament les coses.</p>
+
+<!-- TODO: parlar d'inline-block? -->
+
+<div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=2.html'>2. Tipus de caixes: display</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=1&amp;subcapitol=2.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=2.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

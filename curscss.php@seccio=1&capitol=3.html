@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 1, Capítol 3: Associar style sheets a un document HTML: Linking i Embedding</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=1&amp;capitol=3.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=1&amp;capitol=3.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=2.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=1&amp;capitol=4.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 1: Primeres passes</h1>
+	
+<h2>3. Associar style sheets a un document HTML: <strong>Linking</strong> i <strong>Embedding</strong></h2><!--<h2>3. Associar <i>style sheets</i> a un document HTML: <strong>Linking</strong> i <strong>Embedding</strong></h2>-->
+
+<p class="introduccio">Veurem ara com associar els <i>style sheets</i> a un document HTML. Els dos mètodes bàsics són <em>linking</em> i <em>embedding</em>, que es podrien traduir com 'enllaçar' i 'incrustar', tot i que també és possible associar-los mitjançant l'<i>at-rule</i> <em>@import</em>, com veurem a l'apartat 4 'Tipus de sentència'. Una darrera possibilitat és el que s'anomena <em>inline style sheets</em>.</p>
+
+<h3 class="top3em">Linking</h3>
+<p>Consisteix a utilitzar l'element <span class="element">LINK</span> a la secció HEAD del document HTML per indicar quin arxiu .css s'ha d'utilitzar. Aquest sistema té l'avantatge que permet la reutilització d'un mateix arxiu .css a diferents pàgines HTML. A més queda clar que per una banda hi ha el contingut (arxiu .html) i per l'altra la presentació (arxiu .css).</p>
+<p>És possible associar més d'un arxiu .css, utilitzant un element LINK per cadascun.</p>
+<p>La sintaxi per 'enllaçar' un <i>style sheet</i> és:</p>
+
+<pre class="codi">
+&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;<span class="element">LINK</span> <span class="propietat">rel</span>="stylesheet" <span class="propietat">type</span>="text/css" <span class="propietat">href</span>=<i>url</i>&gt;
+   &lt;/HEAD&gt;
+</pre>
+
+
+<p class="nota"><span class="underlined">Nota</span>: la <i>url</i> pot ser absoluta (p.ex. "http://www.dense13.com"), o bé local ("arxius/nomArxiu.css"). Recorda que ha d'anar entre cometes dobles o simples. Si l'<i>style sheet</i> i la pàgina HTML estan al mateix directori, la <i>url</i> serà simplement el nom de l'arxiu .css.</p>
+
+
+
+<h3 class="top3em">Embedding</h3>
+<p>L'altra opció és "incrustar" l'<i>style sheet</i> en el mateix document HTML (també a la secció HEAD), és a dir, escriure-hi el codi directament. Fixa't que no hi haurà cap arxiu .css, tant l'<i>style sheet</i> com l'HTML estaran al mateix arxiu.</p>
+<p>Això té diversos inconvenients, el principal dels quals és probablement que caldrà copiar l'<i>style sheet</i> a tots i cadascun dels documents que la facin servir. Qualsevol canvi posterior suposarà molt més temps i tindrà més probabilitat d'error que si només haguéssim de modificar un arxiu. De tota manera optar per una o altra possibilitat dependrà dels factors concrets de cada cas. Val la pena conèixer-les totes dues i saber triar amb coherència.</p>
+<p>La sintaxi per "incrustar" un <i>style sheet</i> és:</p>
+
+<pre class="codi">
+&lt;HTML&gt;
+   &lt;HEAD&gt;
+      &lt;<span class="element">STYLE</span> type="text/css"&gt;
+           ...
+           <i>aquí van totes les sentències</i>
+           ...
+      &lt;/<span class="element">STYLE</span>&gt;
+   &lt;/HEAD&gt;
+</pre>
+
+
+<h3 class="top3em"><i>Inline style sheets</i></h3>
+<p>Una darrera alternativa és incloure el bloc de declaració en els elements HTML individuals. Estrictament parlant no assignem cap <i>style sheet</i> al document, sinó que definim l'estil d'un determinat element directament en el codi HTML.</p>
+<p>Per fer-ho utilitzarem l'atribut <span class="propietat">style</span>, que es pot aplicar a (gairebé) qualsevol element HTML, i com a valor escriurem el bloc de declaracions <em>sense</em> les claus { i }.</p>
+
+<pre class="codi">
+&lt;P <span class="propietat">style</span>="color:red;font-size:20px"&gt;
+Un paràgraf de color vermell i mida 20px.&lt;/P&gt;
+</pre>
+<p class="comentari">Observa com el valor de l'atribut <span class="propietat">style</span> respecta estrictament la sintaxi CSS.</p>
+
+<p>Generalment jo no recomanaria aquest mètode, ja que no permet la reutilització de l'estil (si el volem aplicar a tots els paràgrafs l'haurem de copiar a cadascun d'ells), i a més contradiu el principi fonamental dels <i>style sheets</i>: separar contingut i presentació. De tota manera és un recurs útil en determinades situacions.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=1&amp;capitol=4.html'>4. Tipus de sentència <i>(pendent)</i></a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=1&amp;capitol=2.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=1&amp;capitol=4.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

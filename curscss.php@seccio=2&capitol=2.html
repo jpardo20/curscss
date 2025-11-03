@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 2, Capítol 2: Selectors de classe</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=2&amp;capitol=2.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=2&amp;capitol=2.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=2&amp;capitol=1.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=3.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 2: Selectors</h1>
+	
+<h2>2. Selectors de classe</h2><!--<h2>2. Selectors de classe</h2>-->
+
+<p>Els selectors de classe (<i>class selectors</i>) permeten definir diferents estils per a un mateix element, o bé estils que poden ser aplicats a qualsevol element. La idea és definir l'estil d'una determinada <em>classe</em>, i després indicar al document HTML quins elements pertanyen a aquesta classe.</p>
+<p>Hi ha dos tipus de selectors de classe, els generals i els que són específics d'un element determinat.</p>
+
+<h3 class="top3em">Selectors de classe generals</h3>
+
+<p>Seleccionen <em>qualsevol</em> element de la classe donada. La sintaxi és escriure un punt seguit del nom de l'estil.</p>
+
+<pre class="codi">
+<span class="element">.vermell</span> { color: red; }
+<span class="element">.petit</span> { font-size: 9px; }
+</pre>
+
+<p>A l'exemple anterior, qualsevol element (P, H1...) al qual assignem la classe "vermell" es representarà d'acord amb l'estil definit per la classe. De la mateixa manera, qualsevol element de classe "petit" tindrà una mida de font de 9 píxels.</p>
+
+<p>Com s'ha de fer per assignar una classe a un element? Només cal afegir l'atribut <span class="propietat">class</span>, el signe igual i, entre cometes, el nom de la classe corresponent. L'assignació de la classe foma part de l'HTML, per tant es fa en el codi HTML.</p>
+
+<p class="exempleHTML">
+&lt;P <span class="propietat">class="vermell"</span>&gt;Aquest paràgraf és de la classe 'vermell'.&lt;/P&gt;
+</p>
+
+<p>Els noms de les classes han de constar només de caràcters alfanumèrics i guions (-). A més han de començar obligatòriament per una lletra.</p>
+
+
+
+<h3 class="top3em">Selectors de classe específics d'un element</h3>
+
+<p>A diferència dels anteriors són restrictius a l'element al qual s'apliquen. L'única diferència en la sintaxi és que cal afegir aquest element abans de la classe.</p>
+
+<pre class="codi">
+<span class="element">H1.vermell</span> { color: red; }
+<span class="element">P.petit</span> { font-size: 9px; }
+</pre>
+<p class="comentari">Això no vol dir que tots els H1 siguin vermells, sinó només els que siguin the classe 'vermell'.</p>
+
+<p>I a la pàgina web assignem les classes als elements corresponents:</p>
+<p class="exempleHTML">
+&lt;<span class="element">H1 class="vermell"</span>&gt;Aquest títol es representarà en vermell.&lt;/H1&gt;<br />
+&lt;<span class="element">P class="petit"</span>&gt;Aquest paràgraf té una mida de font de 9px.&lt;/P&gt;
+</p>
+
+<p>En canvi no tindria cap efecte:</p>
+<p class="exempleHTML">
+&lt;<span class="element">H1 class="petit"</span>&gt;Aquest títol no té estil associat.&lt;/H1&gt;</p>
+
+<hr />
+
+<p>La combinació coherent de selectors HTML i selectors de classe pot estalviar feina i simplificar el codi de l'<i>style sheet</i>. Per exemple, si volem tenir títols i paràgrafs amb diferents colors per la lletra a la nostra pàgina usarem un <i>style sheet</i> semblant a aquest:</p>
+
+<pre class="codi">
+<span class="element">H1</span> { font-family: Arial; }
+<span class="element">P</span> { font-family: Verdana; }
+
+<span class="element">.blau</span> { color: blue; }
+<span class="element">.vermell</span> { color: red; }
+<span class="element">.verd</span> { color: green; }
+</pre>
+
+<p>I escriurem un codi HTML com el següent:</p>
+
+<p class="exempleHTML">
+&lt;<span class="element">H1</span>&gt;Aquest títol es representarà en negre (color per defecte).&lt;/H1&gt;<br />
+&lt;<span class="element">H1 class="blau"</span>&gt;Aquest en blau.&lt;/H1&gt;<br />
+&lt;<span class="element">H1 class="vermell"</span>&gt;I aquest en vermell.&lt;/H1&gt;<br />
+
+&lt;<span class="element">P class="vermell"</span>&gt;Aquest paràgraf és de color vermell (reutilitzo el selector de classe 'vermell'!).&lt;/P&gt;<br />
+&lt;<span class="element">P class="blau"</span>&gt;I aquest serà blau.&lt;/P&gt;<br />
+&lt;<span class="element">P</span>&gt;I tots els H1 es representaran amb font Arial, mentre que tots els paràgrafs ho faran amb Verdana.&lt;/P&gt;
+</p>
+
+<p>Aquest seria el resultat:</p>
+
+<div class="resultat" style="font-family:Arial">
+<p class="noindent" style="font:2em Arial;color:black">Aquest títol es representarà en negre (color per defecte).</p>
+<p class="noindent" style="font:2em Arial;color:blue">Aquest en blau.</p>
+<p class="noindent" style="font:2em Arial;color:red">I aquest en vermell.</p>
+<p style="color:red;font-family:Verdana">Aquest paràgraf és de color vermell (reutilitzo el selector de classe 'vermell'!).</p>
+<p style="color:blue;font-family:Verdana">I aquest serà blau.</p>
+<p style="font-family:Verdana">I tots els H1 es representaran amb font Arial, mentre que tots els paràgrafs ho faran amb Verdana.</p> 
+</div>
+
+
+<p class="nota"><span class="underlined">Nota</span>: els selectors de classe tenen preferència sobre els selectors bàsics. Si a l'<i>style sheet</i> de l'exemple anterior afegim l'estil <span class="codi"><strong>P</strong>.courier {font-family:"Courier New"}</span>, quan a la pàgina web trobem el codi <span class="codi">&lt;<strong>P class</strong>="courier"&gt;</span>, el paràgraf no es presentarà amb la font Verdana, sinó amb Courier New, que té preferència sobre l'especificada al selector bàsic.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=2&amp;capitol=3.html'>3. Selectors ID</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=2&amp;capitol=1.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=2&amp;capitol=3.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

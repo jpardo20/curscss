@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 4, Capítol 4: Esquemes de posicionament &gt;&gt; Exemple de posicionament absolut: un layout senzill</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=4.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=4.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=3.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=5.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 4: Posicionament CSS</h1>
+	
+<h2>4. Esquemes de posicionament</h2><h3>4.4. Exemple de posicionament absolut: un <i>layout</i> senzill</h3>
+
+<p>L'exemple que segueix serveix per il·lustrar el que has vist fins ara en una situació més o menys real. L'objectiu és fer una pàgina que tingui el contingut principal al centre, i dues columnes a banda i banda amb altres continguts. A més a la columna de la dreta posarem una icona per contactar amb nosaltres, posicionada absolutament.</p>
+<p>L'exemple és una mica més llarg que els que hem vist fins ara, però segur que no et costarà seguir-lo. L'<i>style sheet</i> també és més llarg, però a aquestes alçades ja no t'ha d'espantar! <span class="smiley">:)</span> Primer trobaràs el codi HTML i el codi CSS, i a continuació algunes explicacions sobre l'exemple.</p>
+
+<div class="exempleHTML">
+<span class="element">&lt;BODY&gt;</span><br />
+<span class="element">&lt;H1&gt;</span>Posicionament absolut<span class="element">&lt;/H1&gt;</span><br />
+<span class="element">&lt;P&gt;</span>Aquest exemple mostra un exemple de layout senzill basat en el posicionament absolut. La pàgina conté dos DIV, un a cada costat, posicionats absolutament, i un contingut central.<span class="element">&lt;/P&gt;</span><br />
+<span class="element">&lt;P&gt;</span>L'exemple es basa en establir unes dimensions pels dos DIV coordinades amb el padding del BODY. D'aquesta manera els DIV no es solapen amb el contingut central. Aquest és un layout en tres columnes bàsic però efectiu.<span class="element">&lt;/P&gt;</span><br />
+<span class="element">&lt;P&gt;</span>Fixat que per establir les mides dels DIV faig servir percentatges. Així la pàgina s'adapta a qualsevol resolució de pantalla.<span class="element">&lt;/P&gt;</span><br /><br />
+
+<span class="element">&lt;DIV id="left"&gt;</span><br />
+Aquest DIV està posicionat absolutament, i com que no té avantpassats posicionats, es situa respecte la finestra del navegador. Aquí hi aniria típicament un menú.<br />
+<span class="element">&lt;/DIV&gt;</span><br /><br />
+
+<span class="element">&lt;DIV id="right"&gt;</span><br />
+<span class="element">&lt;DIV class="exclamacio"&gt;</span>!<span class="element">&lt;/DIV&gt;</span><br />
+<span class="element">&lt;P&gt;</span>Aquest DIV també està posicionat absolutament, i tampoc té avantpassats posicionats. A més estableix el bloc contenidor per als seus fills posicionats, és a dir, la imatge.<span class="element">&lt;/P&gt;</span><br />
+<span class="element">&lt;A href="mailto:wec@dense13.com"&gt;&lt;IMG src="email.gif" alt="Enviar Email" /&gt;&lt;/A&gt;</span><br />
+<span class="element">&lt;/DIV&gt;</span><br />
+<span class="element">&lt;/BODY&gt;</span>
+</div>
+
+<p>Observa que el codi HTML és molt senzill. La separació entre contingut i presentació és total. Passem a veure l'<i>style sheet</i>.</p>
+
+<pre class="codi">
+<span class="element">BODY</span> {
+font-family: Verdana, sans-serif;
+<span class="propietat">padding</span>: 1em 28%; }
+
+<span class="element">#left, #right</span> {
+<span class="propietat">position</span>: absolute;
+<span class="propietat">width</span>: 20%;
+border: 2px solid #6a6aff;
+background-color: #e6e6ff;
+padding: 1em;
+font-size: .8em; }
+
+<span class="element">#left</span> {
+<span class="propietat">left</span>: 2%;
+<span class="propietat">top</span>: 2em; }
+
+<span class="element">#right</span> {
+<span class="propietat">right</span>: 2%;
+<span class="propietat">top</span>: 2em; }
+
+<span class="element">#right img</span> {
+<span class="propietat">position</span>: absolute;
+<span class="propietat">top</span>: 2px;
+<span class="propietat">right</span>: 2px;
+border: none; }
+
+<span class="element">#right .exclamacio</span> {
+font: bold 6em monospaced;
+color: red; }
+</pre>
+
+<p>I aquest n'és el <em><a href="exemples/Exemple_Posicionament_absolut.html" onclick="open('exemples/Exemple_Posicionament_absolut.html','',''); return false;">resultat</a></em> (s'obre en una nova finestra)</p>
+
+<h4>Comentaris: posicionament absolut</h4>
+<p>Els DIV amb id 'left' i 'right' estan posicionats absolutament. Com que no tenen cap avantpassat posicionat, el seu bloc contenidor l'estableix l'element HTML. És a dir, les propietats <span class="propietat">top</span>, <span class="propietat">left</span> i <span class="propietat">right</span> es mesuren respecte els extrems de la finestra del navegador.</p>
+<p>La imatge dins el DIV#right també està posicionada de forma absoluta. Ara el bloc contenidor és el DIV, ja que és l'avantpassat posicionat més proper. La propietat <span class="propietat">right</span> diu que la imatge estarà separada de l'extrem dret del DIV per 2px, i el mateix per a la propietat <span class="propietat">top</span>. Fixa't que, com vaig explicar a l'<a href="curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=3.html" title="Secció 4, Capítol 4.1: 'Posicionament absolut'">apartat anterior</a>, donat que es tracta d'un element absolutament posicionat les propietats <span class="propietat">right</span> i <span class="propietat">top</span> fan referència a l'àrea <i>padding</i> de l'antecedent (el DIV) i no a l'àrea de contingut. Ho pots veure perquè el DIV té padding 1em, i en canvi la imatge es situa a 2px de la vora, no pas a 1em + 2px.</p>
+
+<h4>Comentaris: <i>layout</i></h4>
+<p>Observa com s'ha coordinat el <i>padding</i> de BODY amb les dimensions dels DIV, per evitar el solapament que es produia en els primers exemples del capítol anterior. Aquest és un bon exemple (força senzill!) de <i>layout</i> basat en CSS. Tradicionalment s'haurien usat taules per a assolir aquesta disposició en tres columnes, però en la pàgina no hi ha realment cap taula. L'ús del posicionament CSS permet que el codi HTML descrigui de forma més acurada els continguts de la pàgina, deixant la presentació a càrrec dels <i>style sheets</i>.</p>
+<p>L'exemple mostra de fet un avantatge adicional d'usar posicionament CSS enlloc d taules. Fixa't que en el codi HTML primer hi ha el contingut de la pàgina i després el dels DIV. D'aquesta manera el navegador comença mostrant el contingut (suposem que és el més interessant <span class="smiley">:)</span> ), i després carrega les columnes laterals. Això en una pàgina senzilla com aquesta és irrelevant, però si estigués carregada d'imatges, Flash o Java l'ordre de càrrega passaria a ésser un factor important. I si ens interessés un altre ordre, cap problema! Simplement cal posar al principi del BODY el DIV que volem primer, el resultat final és exactament el mateix!</p>
+
+<h4>Comentaris: mesures relatives</h4>
+<p>No puc evitar fer un comentari respecte l'ús de mesures relatives (<span class="unitat">em</span> i percentatges) enlloc de per exemple <span class="unitat">px</span> o <span class="unitat">pt</span>. El <i>layout</i> d'aquesta pàgina s'adapta a qualsevol resolució de pantalla, incloses resolucions molt baixes o molt altes. Dissenyar per a resolucions fixes (típicament 800<span class="unitat">px</span> o 1024<span class="unitat">px</span> d'amplada) és una pràctica molt extesa però que presenta greus inconvenients. En fi, no és aquest el lloc ni el moment de parlar en profunditat d'aquest tema, però crec que és interessant posar-lo de manifest.</p>
+
+<h4>Comentaris: limitacions IE</h4>
+<p>Mmh, no puc evitar tampoc parlar breument dels problemes d'implementació d'Internet Explorer. En els DIV amb id 'left' i 'right' la propietat width està establerta a 20<span class="unitat">%</span>. D'acord amb l'estàndard CSS aquest percentatge es mesura respecte l'amplada del bloc contenidor. Com hem vist anteriorment, el bloc contenidor l'estableix l'element posicionat avantpassat més proper, i si no n'hi ha cap, com és el nostre cas, l'estableix l'àrea de contingut de l'element arrel, és a dir, l'element HTML. Ara bé, IE interpreta erròniament que l'element arrel és BODY, i com que BODY té <i>padding</i> lateral, l'amplada dels DIV es calcula incorrectament respecte l'àrea de contingut de BODY.</p>
+<p>Aquest és un problema de fàcil solució. T'atreveixes a intentar-ho?</p>
+
+<!-- PREGUNTA -->
+<div class="pregunta">
+<p class="pregunta">Pregunta</p>
+
+<p>Com es pot modificar el codi HTML i CSS de l'exemple per tal d'evitar el problema que ens planteja IE, sense haver de sacrificar-lo excessivament?</p>
+
+<a class="solucio" href="javascript:popup('popup4-4-4')">Solució &gt;&gt; </a>
+	<!-- POPUP: solució -->
+	<div id="popup4-4-4" class="popup">
+	Hi ha diverses solucions, jo us en proposo una de poc sofisticada (això és bò) i alhora efectiva.<br /><br /> Com que el prolema el dona el fet d'usar <i>padding</i> al BODY, podem embolcallar tot el codi de la pàgina dins un DIV (per exemple amb id='tot'), i assignar-li a ell el <i>padding</i>. És un DIV poc atractiu des del punt de vista conceptual (no correspon a cap divisió de contingut de la pàgina), però no fa cap mal, i ens permet resoldre el problema de compatibilitat de forma més o menys neta. El codi HTML tindrà aquest aspecte:<br /><br />
+
+<div class="exempleHTML">
+&lt;BODY&gt;&lt;DIV id="tot"&gt;<br />
+··· codi de la pàgina<br />
+&lt;/DIV&gt;&lt;/BODY&gt;<br />
+</div><br /><br />
+		
+	I l'<i>style sheet</i> canviarà el selector BODY per #tot.
+	
+	<br /><br />
+	<div class="centered"><a class="tancar" href="javascript:popup('popup4-4-4')">- Tancar -</a></div><br />
+	</div><!-- end POPUP -->
+
+</div><!-- end 'pregunta' --><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=5.html'>4. Esquemes de posicionament: Posicionament relatiu</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=3.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=5.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

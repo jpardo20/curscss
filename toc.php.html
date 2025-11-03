@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - taula de continguts</title>
+
+	<meta name="description" content="CSS en català - TdC. Des de la taula de continguts pots accedir a qualsevol capítol del curs 'CSS en català'. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/toc.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+</head>
+
+
+<body>
+<div id="header">
+	<div id="txtCSS">CSS</div>
+	<div id="txtEnCatala">en català</div>
+
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="https://dense13.com/wec/curscss/toc.php?" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="https://dense13.com/wec/curscss/toc.php?" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script>
+	<div class='navPrev'><a href="curscss.php@seccio=0&amp;capitol=0.html" title="CSS en català: entrada al curs">Entrar</a></div>
+</div>
+
+<div id="main">
+<div id="main2">
+
+<h1>Taula de continguts</h1>
+<div id="toc">
+
+<ul>
+<li class='seccio'><a href='index.php.html'><strong>INICI</strong></a></li>
+
+<li class='seccio' id='seccio0'><a href='curscss.php@seccio=0&amp;capitol=0.html'><strong>SECCIÓ 0</strong>: <i>Introducció</i></a>
+<ul>
+<li class='capitol'><strong>Cap1</strong>: <a href='curscss.php@seccio=0&amp;capitol=1.html'>HTML i CSS</a></li>
+<li class='capitol'><strong>Cap2</strong>: <a href='curscss.php@seccio=0&amp;capitol=2.html'>Especificacions: el W3C</a></li>
+<li class='capitol'><strong>Cap3</strong>: <a href='curscss.php@seccio=0&amp;capitol=3.html'>Element vs. Tag</a></li>
+<li class='capitol'><strong>Cap4</strong>: <a href='curscss.php@seccio=0&amp;capitol=4.html'>Elements de bloc, elements inline</a></li>
+<li class='capitol'><strong>Cap5</strong>: <a href='curscss.php@seccio=0&amp;capitol=5.html'>Signes convencionals</a></li>
+</ul></li>
+<li class='seccio' id='seccio1'><a href='curscss.php@seccio=1&amp;capitol=0.html'><strong>SECCIÓ 1</strong>: <i>Primeres passes</i></a>
+<ul>
+<li class='capitol'><strong>Cap1</strong>: <a href='curscss.php@seccio=1&amp;capitol=1.html'>Què significa CSS?</a></li>
+<li class='capitol'><strong>Cap2</strong>: <a href='curscss.php@seccio=1&amp;capitol=2.html'>Elements d'un style sheet</a></li>
+<li class='capitol'><strong>Cap3</strong>: <a href='curscss.php@seccio=1&amp;capitol=3.html'>Associar style sheets a un document HTML: <strong>Linking</strong> i <strong>Embedding</strong></a></li>
+<li class='capitol'><strong>Cap4</strong>: <a href='curscss.php@seccio=1&amp;capitol=4.html'>Tipus de sentència <i>(pendent)</i></a></li>
+<li class='capitol'><strong>Cap5</strong>: <a href='curscss.php@seccio=1&amp;capitol=5.html'>Comentaris</a></li>
+<li class='capitol'><strong>Cap6</strong>: <a href='curscss.php@seccio=1&amp;capitol=6.html'>Element pare, element fill i herència</a></li>
+</ul></li>
+<li class='seccio' id='seccio2'><a href='curscss.php@seccio=2&amp;capitol=0.html'><strong>SECCIÓ 2</strong>: <i>Selectors</i></a>
+<ul>
+<li class='capitol'><strong>Cap1</strong>: <a href='curscss.php@seccio=2&amp;capitol=1.html'>Selectors bàsics: elements HTML</a></li>
+<li class='capitol'><strong>Cap2</strong>: <a href='curscss.php@seccio=2&amp;capitol=2.html'>Selectors de classe</a></li>
+<li class='capitol'><strong>Cap3</strong>: <a href='curscss.php@seccio=2&amp;capitol=3.html'>Selectors ID</a></li>
+<li class='capitol'><strong>Cap4</strong>: <a href='curscss.php@seccio=2&amp;capitol=4.html'>Selectors contextuals</a></li>
+<li class='capitol'><strong>Cap5</strong>: <a href='curscss.php@seccio=2&amp;capitol=5.html'>Selectors pseudoclasse: links</a></li>
+<li class='capitol'><strong>Cap6</strong>: <a href='curscss.php@seccio=2&amp;capitol=6.html'>Selectors pseudoelement</a></li>
+<li class='capitol'><strong>Cap7</strong>: <a href='curscss.php@seccio=2&amp;capitol=7.html'>Grups de selectors</a></li>
+</ul></li>
+<li class='seccio' id='seccio3'><a href='curscss.php@seccio=3&amp;capitol=0.html'><strong>SECCIÓ 3</strong>: <i>Propietats</i></a>
+<ul>
+<li class='capitol'><strong>Cap1</strong>: <a href='curscss.php@seccio=3&amp;capitol=1.html'>Conceptes generals</a></li>
+<li class='capitol'><strong>Cap2</strong>: <a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html'>Propietats relacionades amb el color i el fons (<i>background</i>)</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html'>color</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=2.html'>background-color</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=3.html'>background-image</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=4.html'>background-repeat</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=5.html'>background-position</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=6.html'>background-attachment</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=7.html'>background</a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap3</strong>: <a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=1.html'>Propietats relacionades amb el text</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=1.html'>font-family</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=2.html'>font-style</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=3.html'>font-weight</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=4.html'>font-size</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=5.html'>font-variant</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=6.html'>font-stretch</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=7.html'>line-height</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=8.html'>font</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=9.html'>text-indent</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=10.html'>text-decoration</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=11.html'>text-shadow</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=12.html'>text-transform</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=13.html'>letter-spacing</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=3&amp;subcapitol=14.html'>word-spacing</a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap4</strong>: <a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=1.html'>Propietats relacionades amb les caixes</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=1.html'>El <i>CSS Box Model</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=2.html'>Parts d'una caixa</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=3.html'>Dimensions d'una caixa</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=4.html'>Propietats margin</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=5.html'>Propietats padding</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=4&amp;subcapitol=6.html'>Propietats border</a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap5</strong>: <a href='curscss.php@seccio=3&amp;capitol=5&amp;subcapitol=1.html'>Llistes i <i>markers</i></a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=5&amp;subcapitol=1.html'>Llistes</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=5&amp;subcapitol=2.html'>list-style-image</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=5&amp;subcapitol=3.html'>list-style-type</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=5&amp;subcapitol=4.html'>list-style-position</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=3&amp;capitol=5&amp;subcapitol=5.html'>list-style</a></i></li>
+</ul></li>
+</ul></li>
+<li class='seccio' id='seccio4'><a href='curscss.php@seccio=4&amp;capitol=0.html'><strong>SECCIÓ 4</strong>: <i>Posicionament CSS</i></a>
+<ul>
+<li class='capitol'><strong>Cap1</strong>: <a href='curscss.php@seccio=4&amp;capitol=1&amp;subcapitol=1.html'>El <i>CSS Box Model</i> revisat</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=1&amp;subcapitol=1.html'>El model de caixes</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=1&amp;subcapitol=2.html'>Bloc contenidor</a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap2</strong>: <a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=1.html'>Tipus de caixes</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=1.html'>Elements de bloc. Elements <i>inline</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=2.html'>display</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=2&amp;subcapitol=3.html'>Caixes anònimes <i>(pendent)</i></a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap3</strong>: <a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=1.html'>Dimensions d'una caixa</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=1.html'>width</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=2.html'>height</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=3.html'>Elements reemplaçats <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='https://dense13.com/wec/curscss/curscss.php?seccio=4&amp;capitol=3&amp;subcapitol=4'>Limitar les dimensions</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=3&amp;subcapitol=5.html'>Suport en diversos navegadors <i>(pendent)</i></a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap4</strong>: <a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=1.html'>Esquemes de posicionament</a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=1.html'>Fluxe normal</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=2.html'>Elements posicionats: position, top, left, bottom, right</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=3.html'>Posicionament absolut</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=4.html'>Exemple de posicionament absolut: un <i>layout</i> senzill</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=5.html'>Posicionament relatiu</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=6.html'>Exemple de posicionament relatiu: caixes de solució</a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=7.html'>Posicionament fixe <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=4&amp;subcapitol=8.html'>z-index <i>(pendent)</i></a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap5</strong>: <a href='curscss.php@seccio=4&amp;capitol=5&amp;subcapitol=1.html'>Elements flotants <i>(pendent)</i></a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=5&amp;subcapitol=1.html'>float <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=5&amp;subcapitol=2.html'>clear <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=5&amp;subcapitol=3.html'>Posicionament flotant avançat <i>(pendent)</i></a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap6</strong>: <a href='curscss.php@seccio=4&amp;capitol=6.html'>Càlcul de marges i dimensions <i>(pendent)</i></a></li>
+<li class='capitol'><strong>Cap7</strong>: <a href='curscss.php@seccio=4&amp;capitol=7&amp;subcapitol=1.html'>Elements <i>inline</i> i alçada <i>(pendent)</i></a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=7&amp;subcapitol=1.html'>line-height <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=7&amp;subcapitol=2.html'>vertical-align <i>(pendent)</i></a></i></li>
+</ul></li>
+<li class='capitol'><strong>Cap8</strong>: <a href='curscss.php@seccio=4&amp;capitol=8&amp;subcapitol=1.html'>Caixes i visualització <i>(pendent)</i></a>
+<ul>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=8&amp;subcapitol=1.html'>overflow <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=8&amp;subcapitol=2.html'>clip <i>(pendent)</i></a></i></li>
+<li class='subcapitol'><i><a href='curscss.php@seccio=4&amp;capitol=8&amp;subcapitol=3.html'>visibility <i>(pendent)</i></a></i></li>
+</ul></li>
+</ul></li></ul>
+
+</div><!-- EOf toc -->
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+	<div class='navPrev' style='top:20px;'><a href="curscss.php@seccio=0&amp;capitol=0.html" title="CSS en català: entrada al curs">Entrar</a></div>
+</div>
+
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

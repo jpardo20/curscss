@@ -1,0 +1,55 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+<title>Page title</title>
+<style type="text/css">
+<!--
+BODY {
+font-family: Verdana, sans-serif;
+padding: 1em 28%; }
+
+#left, #right {
+position: absolute;
+width: 20%;
+border: 2px solid #6a6aff;
+background-color: #e6e6ff;
+padding: 1em;
+font-size: .8em; }
+
+#left {
+left: 2%;
+top: 2em; }
+#right {
+right: 2%;
+top: 2em; }
+
+#right img {
+position: absolute;
+top: 2px;
+right: 2px;
+border: none; }
+#right .exclamacio {
+font: bold 4em monospaced;
+color: red; }
+-->
+</style>
+
+</head>
+<boyd>
+<h1>Posicionament absolut</h1>
+<p>Aquest exemple mostra un exemple de layout senzill basat en el posicionament absolut. La pàgina conté dos DIV, un a cada costat, posicionats absolutament, i un contingut central.</p>
+<p>L'exemple es basa en establir unes dimensions pels dos DIV coordinades amb el padding del BODY. D'aquesta manera els DIV no es solapen amb el contingut central. Aquest és un layout en tres columnes bàsic però efectiu.</p>
+<p>Fixat que per establir les mides dels DIV faig servir percentatges. Així la pàgina s'adapta a qualsevol resolució de pantalla.</p>
+
+<div id="left">
+Aquest DIV està posicionat absolutament, i com que no té avantpassats posicionats, es situa respecte la finestra del navegador. Aquí hi aniria típicament un menú.
+</div>
+
+<div id="right">
+<div class="exclamacio">!</div>
+<p>Aquest DIV també està posicionat absolutament, i tampoc té avantpassats posicionats. A més estableix el bloc contenidor per als seus fills posicionats, és a dir, la imatge.</p>
+<a href="mailto:wec@dense13.com"><img src="email.gif" alt="Enviar Email" /></a>
+</div>
+</body>
+</html>

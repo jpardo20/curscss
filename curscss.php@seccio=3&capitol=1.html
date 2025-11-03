@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+	<title>weC CSS EN CATALÀ - Secció 3, Capítol 1: Conceptes generals</title>
+
+	<meta name="description" content="CSS en català - presentació. 'CSS en català' és un curs complet de CSS2 que tracta amb detall la majoria de l'especificació CSS2 del W3C. (dense13.com)" />
+
+	<link rel='stylesheet' type='text/css' href='css/common.css' />
+	<link rel='stylesheet' type='text/css' href='css/layout_original.css' />
+	<link rel='stylesheet' type='text/css' href='css/skin_blue.css' />
+
+	<script type='text/javascript' src='js/curscss.js' charset='utf-8'></script>
+</head>
+
+
+<body>
+
+<div id="header">
+<div id="txtCSS">CSS</div>
+<div id="txtEnCatala">en català</div>
+
+<div class="menuGral">
+<div class="titol">w e C</div>
+<div><a href="https://dense13.com/wec/index.php" title="weC - pàgina d'inici">weC - inici</a></div>
+<div><a href="index.php.html" title="Curs de CSS - pàgina d'inici">Curs de CSS</a></div>
+<div><a href="http://www.dense13.com" title="dense13.com - pàgina d'inici">dense13.com</a></div>
+</div>
+
+<form action="curscss.php@seccio=3&amp;capitol=1.html" method="post" id="selectSkin">
+<div class="menuSkin">
+<div class="titol">Canviar skin</div>
+<select name="newSkin" onchange="document.getElementById('selectSkin').submit()">
+	<option value="0">CSS blues</option>
+	<option value="1">Flames</option>
+</select>
+</div>
+</form>
+
+<form action="curscss.php@seccio=3&amp;capitol=1.html" method="post" id="selectIdiom">
+<div class="menuLang">
+<input type="button" value="català" title="versió catalana"
+	onclick="document.forms['selectIdiom'].newIdiom.value='ca';getElementById('selectIdiom').submit()" />
+<input type="button" value="english" title="english version"
+	onclick="document.forms['selectIdiom'].newIdiom.value='en';getElementById('selectIdiom').submit()" />
+<input type="hidden" name="newIdiom" value="" />
+</div>
+</form>
+
+
+<script type='text/javascript'><!--
+	document.forms['selectSkin'].newSkin.selectedIndex = 0
+//--></script><div class="menuNav">
+
+<div class='navPrev'><a href='curscss.php@seccio=3&amp;capitol=0.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+</div>
+
+<div id="main">
+<div id="main2">
+	<h1 class='titol-seccio'>Secció 3: Propietats</h1>
+	
+<h2>1. Conceptes generals</h2><!--<h2>1. Conceptes generals</h2>-->
+
+
+<!-- 1.1. Sintaxi -->
+<h3>1.1. Sintaxi</h3>
+<p>Fem un breu repàs de la sintaxi CSS relacionada amb les propietats, que ja vam veure a la Secció 1 apartat 2: '<a href="curscss.php@seccio=1&amp;capitol=2.html">Elements d'un <i>style sheet</i></a>'</p>
+<p>Un <i>style sheet</i> està format per un seguit de <em>sentències</em>. Cada sentència consta d'un <em>selector</em> i un <em>bloc de declaracions</em> delimitat per claus, <b>{</b> <b>}</b>. Al seu torn, el bloc de declaracions està format per una o més <em>declaracions</em> separades per punt i coma. Centrem-nos ara en la sintaxi d'una declaració.</p>
+<p>Com ja deus saber, una declaració està formada per una <em>propietat</em> i un <em>valor</em> separats per dos punts.</p>
+
+<p class="pseudocodi">
+propietat<b>:</b> valor<b>;</b><br />
+propietat<b>:</b> valor1<b>,</b> valor2<b>,</b> ... <b>,</b> valor n<b>;</b>
+</p>
+
+<p>Com veiem al segon exemple, algunes propietats, com ara <span class="propietat">font-family</span>, poden rebre un seguit de valors separats per comes. En aquests casos el navegador del client intenta aplicar el primer valor a la propietat, si no és possible ho prova amb el segon, i així successivament.</p>
+<p>Els noms de les propietats i els possibles valors que pot rebre cadascuna d'elles estan definits a l'especificació CSS, i és el que veurem en els propers apartats d'aquesta secció.</p>
+<p>Quan el nom d'una propietat té més d'una paraula, aquestes se separen mitjançant guions. Com veurem, és un fet molt corrent, com ara a <span class="propietat">font-size</span>, <span class="propietat">background-color</span> o <span class="propietat">border-top-width</span>.</p>
+
+<p>La sintaxi dels valors està especificada per a cada propietat. Nosaltres veurem els casos generals als apartats 1.2 a 1.5 (colors, longituds, adreces i percentatges), i els casos particulars s'explicaran individualment a la propietat afectada.</p>
+
+
+
+<!-- 1.2. Colors -->
+<a name="color"></a>
+<h3 class="top3em">1.2. Colors</h3>
+<p>Moltes propietats reben valors de <em>color</em>. L'especificiació CSS ofereix dues possibilitats per designar colors:</p>
+
+<ul>
+	<li><b>Mitjançant paraules clau</b>. Els 16 colors definits a HTML 4.0 són <span class="clau">aqua</span>, <span class="clau">black</span>, <span class="clau">blue</span>, <span class="clau">fuchsia</span>, <span class="clau">gray</span>, <span class="clau">green</span>, <span class="clau">lime</span>, <span class="clau">maroon</span>, <span class="clau">navy</span>, <span class="clau">olive</span>, <span class="clau">purple</span>, <span class="clau">red</span>, <span class="clau">silver</span>, <span class="clau">teal</span>, <span class="clau">white</span> i <span class="clau">yellow</span>. <!-- FALTA: system colors --></li>
+	<li><b>En format RGB</b>. El format RGB (<i>Red.Green.Blue</i>) consisteix a especificar tres números corresponents a la proporció entre vermell, verd i blau. El rang d'aquests números és de 0 a 255, i es pot especificar de diverses maneres. Per exemple el color vermell, que correspon als valors vermell=255, verd=0 i blau=0, pot expressar-se com:
+		<ul>
+			<li><span class="monospaced"><b>rgb(255,0,0)</b></span><br />
+				Les quantitats de cada color s'indiquen amb un número de 0 a 255.</li>
+			<li><span class="monospaced"><b>rgb(100%,0,0)</b></span><br />
+				Les quantitats de cada color s'indiquen amb percentatges (100% equival a 255).</li>
+			<li><span class="monospaced"><b>#ff0000</b></span><br />
+				Els valors s'indiquen en format <em>#rrggbb</em>. Cada grup de dues xifres indica la quantitat d'un color en notació hexadecimal. Explicar la notació hexadecimal està fora de l'abast d'aquest curs.</li>
+			<li><span class="monospaced"><b>#f00</b></span><br />
+				El format hexadecimal de tres xifres <em>#rgb</em> es converteix al de sis duplicant cada xifra.</li>
+		</ul>
+	</li>
+</ul>
+
+<p>En veurem exemples a l'apartat 2 '<a href="curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html">Propietats relacionades amb el color i el fons</a>'.</p>
+
+
+<!-- 1.3. Longituds -->
+<a name="longitud"></a>
+<h3 class="top3em">1.3. Longituds</h3>
+<p>Per indicar longituds en CSS utilitzarem un número seguit d'una unitat, sense deixar cap espai entre mig. Les longituds poden ser positives o negatives, tot i que no totes les propietats acceptaran valors negatius. Per exemple, un marge pot ser negatiu, però en cavi no té sentit una mida de font negativa. Per la longitud '0', la unitat és opcional.</p>
+<p>Hi ha dos tipus d'unitats, <em>relatives</em> i <em>absolutes</em>. Es recomana l'ús de mesures relatives sempre que sigui possible, ja que permet que la representació dels documents HTML s'adapti a les condicions particulars de cada usuari (diferents monitors, resolucions o preferències).</p>
+
+<h4>Unitats relatives</h4>
+<p>Especifiquen una longitud relativa a la font. Hi ha dues unitats relatives:</p>
+
+<ul>
+	<li><b>em</b> - fa referència a la mida de la font, que com veurem més endavant és establerta per la propietat <span class="propietat">font-size</span>. Un cas excepcional és l'ús de <span class="unitat">em</span> precisament per la propietat <span class="propietat">font-size</span>. En aquest cas la longitud farà referència al valor de <span class="propietat">font-size</span> del seu element pare.</li>
+	<li><b>ex</b> - fa referència a l'alçada-x (<i>x-height</i>) de la font. Aquesta unitat correspon normalment a l'alçada de la lletra 'x', i és per tant més petita que <span class="unitat">em</span>.</li>
+</ul>
+
+<p>Per exemple, si el marge d'un paràgraf té el valor '3em' significarà que el marge serà el triple que la mida de la font d'aquest paràgraf. En canvi, si el valor de la propietat <span class="propietat">font-size</span> d'un element <span class="element">A</span> és '3em' significarà que la mida de la font del link serà tres vegades més gran que la del seu element pare. Si no ho veus del tot clar no t'amoïnis, tot s'anirà aclarint a mesura que veiem les diferents propietats amb detall.</p>
+
+<h4>Unitats absolutes</h4>
+<p>Com el seu nom indica, són unitats que determinen un valor concret que no depèn d'altres factors. Les unitats absolutes són:</p>
+
+<ul>
+	<li><b>px</b> - píxels</li>
+	<li><b>in</b> - <i>inches</i> (polzades). 1 polzada equival a 2.54 centímetres.</li>
+	<li><b>cm</b> - centímetres</li>
+	<li><b>mm</b> - milímetres</li>
+	<li><b>pt</b> - punts. Els punts utilitzats a CSS equivalen a 1/72 part de polzada.</li>
+	<li><b>pc</b> - pica. 1 pica és igual a 12 punts.</li>
+</ul>
+
+<p>Es desaconsella l'ús de totes les unitats absolutes excepte <span class="unitat">px</span>, i fins i tot és millor evitar aquesta unitat sempre que es pugui utilitzar una unitat relativa. Les longituds absolutes s'haurien d'utilitzar només quan es coneixen les dimensions exactes del medi (per exemple, quan un document estigui destinat a imprimir-se).</p>
+
+<p class="nota"><span class="underlined">Nota:</span> he comès una imprecisió voluntàriament, per tal de simplificar l'explicació de les unitats. Si mirem l'especificació CSS2 del W3C, veurem que la unitat px està classificada com a relativa, ja que és relativa al dispositiu de visualització, típicament el monitor. De fet un píxel no té una mida concreta (depen no només del monitor, sinó també de la resolució de pantalla), a diferència de les unitats absolutes. Ara bé, a la pràctica només utilitzarem unitats relatives, i entre elles trobem dos comportaments diferents: em i ex són valors que depenen de l'element al qual s'apliquen, mentre que px és una longitud fixa per a cada usuari (20px no són iguals a tots els monitors, però sí ho són al monitor d'un usuari concret, independentment de l'element al qual afectin). És per això que he decidit separar px de les altres propietats relatives, com fan altres tutorials similars. Probablement la majoria de lectors passin per alt aquesta nota, però no he pogut evitar incloure-la per si algú desitjava una explicació més rigorosa.</p>
+
+
+<!-- 1.4. Adreces -->
+<a name="url"></a>
+<h3 class="top3em">1.4. Adreces (URL)</h3>
+<p>Per especificar adreces en CSS utilitzarem el format següent:</p>
+<p class="pseudocodi"><strong>url</strong>(<i>adreça</i>)</p>
+<p>Les adreces poden ser absolutes o relatives. Si són relatives es calculen respecte a la ubicació de l'arxiu .css, o respecte a la ubicació de l'arxiu .html si l'<i>style sheet</i> està incrustat (<i>embedded</i>). A més podem optar per posar-les o no entre cometes (simples o dobles). Els següents són exemples d'adreces vàlides:</p>
+<pre class="codi2">
+<b>url</b>("http://www.dense13.com/")
+<b>url</b>(http://programmingtutorials.com/)
+<b>url</b>('imatges/fons.jpg')
+<b>url</b>(../botons/endavant.gif)
+</pre>
+
+
+<!-- 1.5. Percentatges -->
+<a name="percentatge"></a>
+<h3 class="top3em">1.5. Percentatges</h3>
+<p>Els percentatges en CSS s'indiquen mitjançant un número immediatament seguit del signe <strong>%</strong>. Com en el cas de les longituds, segons la propietat a la que afectin poden ser negatius.</p>
+<p>Els percentatges són sempre relatius a un altre valor, generalment una longitud. Cada propietat que admet percentatges definex quin és el valor al qual faran referència. Aquest valor pot ser el d'una altra propietat del mateix element, o bé el d'una propietat de l'element pare. Veurem exemples de seguida, com ara a les propietats <span class="propietat">font-size</span>, <span class="propietat">text-indent</span> o <span class="propietat">margin</span>.</p>
+<p>Hem vist a la Secció 1 apartat 6 '<a href="curscss.php@seccio=1&amp;capitol=6.html">Element pare, element fill i herència</a>' que moltes de les propietats són heretades pels elements fill. En el cas dels percentatges quan la propietat s'hereta el que s'hereta no és el percentatge en sí, sinó el <em>valor computat</em>, és a dir, el valor de longitud resultant d'aplicar el percentatge. Suposem que tenim tres elements A, B i C, i que B és fill de A i C és fill de B. Si A té una mida de font de 20px i B té una mida de font del 50% (és a dir, 10px), quina serà la mida de font de C? Si C heretés el valor del percentatge, tindria un 50% sobre la mida de font de B, i resultaria un total de 5px. Però el que s'hereta és el valor computat de B, és a dir, els 10px.</p>
+
+<hr />
+
+<p>Durant tota aquesta secció i la propera, sovint es farà referència a aquest apartat, com ara cada vegada que una propietat admeti valors de longitud. Al llarg del text les paraules <a href="curscss.php@seccio=3&amp;capitol=1.html#color" class="referencia">color</a>, <a href="curscss.php@seccio=3&amp;capitol=1.html#longitud" class="referencia">longitud</a>, <a href="curscss.php@seccio=3&amp;capitol=1.html#url" class="referencia">adreça</a> i <a href="curscss.php@seccio=3&amp;capitol=1.html#percentatge" class="referencia">percentatge</a> escrites com les veus aquí indiquen un enllaç cap a l'explicació corresponent. Si després d'utilitzar algun d'aquests enllaços vols tornar a la pàgina on eres, clica el botó 'Retrocedir' del teu navegador. En alguns navegadors les tecles 'esborrar' (<i>backspace</i>) o bé 'ALT+esquerra' tenen també aquesta funció.</p><div id='capSeguent'><strong>A continuació...</strong><br /><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html'>2. Propietats relacionades amb el color i el fons (<i>background</i>): color</a></div>
+</div><!-- EOf main2 -->
+</div><!-- EOf main -->
+
+<div id="footer">
+
+<div class='navPrev'><a href='curscss.php@seccio=3&amp;capitol=0.html' title='Pàgina anterior'>&lt;</a></div>
+<div class='navNext'><a href='curscss.php@seccio=3&amp;capitol=2&amp;subcapitol=1.html' title='Pàgina següent'>&gt;</a></div>
+<div class='navTOC'><a href='toc.php.html' title='Taula de continguts'>TdC</a></div></div>
+<div id="footer2">
+<strong><a href="http://www.dense13.com/wec/curscss/" style="text-decoration:none;">CSS en català</a></strong><br />
+Darrera actualització: 11 de gener de 2004<br /><br />
+
+&copy; 2002-04, <a href="http://www.dense13.com/wec/" style="text-decoration:none">weC</a> - Gonzalo Pérez de la Ossa<br />
+Contacte: <a href="mailto:wec@dense13.com">wec@dense13.com</a><br /><br />
+
+<p><a href="http://validator.w3.org/check/referer"><img src="../../common/imatges/valid-xhtml10.gif" alt="Valid XHTML 1.0!" height="31" width="88" /></a> <a href="http://jigsaw.w3.org/css-validator/check/referer"><img width="88" height="31" src="../../common/imatges/vcss.gif" alt="Valid CSS!" /></a></p>
+</div>
+
+</body>
+</html>

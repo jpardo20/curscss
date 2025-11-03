@@ -1,0 +1,511 @@
+@charset "utf-8";
+@media all {
+/* ========================== */
+/* --- Selectors generals --- */
+/* ========================== */
+body {
+	color: #000;
+	background-color: #69c;
+	font-family: Arial, "Trebuchet MS", sans-serif;
+}
+
+body, th, td { font-size: 80%; }
+html>body th, html>body td { font-size: 100%; }
+
+p {
+	margin: .7em 0;
+	text-indent: 20px;
+	line-height: 140%;
+}
+
+
+/* H1 */
+h1 {
+	color: #69c;
+	background-color: #f2f9ff;
+	border: 2px solid #69c; border-width: 2px 25px;
+	font-size: 1.8em;
+	text-align: center;
+	padding: 5px;
+}
+h1.titol-seccio {
+	border: 1px solid #69c; border-right-width: 5px;
+	font-size: 1.2em;
+	text-align: right;
+	padding: 2px;
+	margin-bottom: 0; /* Can margin-bottom be > 0? (but collapsing with whatever is next) */
+	margin-top: 5px;
+}
+
+/* H2 */
+h2, .apartat-independent { font-size: 1.6em; }
+h2 strong { color: maroon; }
+
+/* H3 */
+h3 { 
+	font-size: 1.4em;
+	text-decoration: underline;
+	margin-top: 1.5em;
+}
+/* H4 */
+h4 {
+	font-size: 1.2em;
+	margin-top: 4em;
+}
+
+/* H3 i H4 */
+h3.tPropietat, h4.tPropietat { text-decoration: none; }
+.tPropietat .propietat {	/* Correspon als H3 i alguns H4 de les Secc. 3 i 4 */
+	color: #06c;
+	background-color: #f2f9ff;
+	border-top: 1px solid #b2b9bf;
+	border-bottom: 1px solid #b2b9bf;
+	font-family: "Courier New", monospace;
+	text-decoration: none; /* ?¿? what for? */
+	padding: 0 6px;
+	margin: 0 6px;
+}
+.detall { /* s'aplica a H3 i H4, on diu "(propietat abreviatura)" */
+	font-weight: normal;
+	font-style: italic;
+}
+
+
+
+/* Altres generals */
+hr {
+	width: 90%;
+	color: #69c; background-color: #69c;
+	text-align: center;
+}
+em {
+	font-family: "Verdana", sans-serif;
+	text-transform: uppercase;
+	font-style: normal;
+	color: #666;
+}
+p.nota em { color: #555; }
+strong { font-weight: bold; }
+a img { border-style: none; }
+
+table {
+	border: 2px solid #69c;
+	border-collapse: collapse;
+	margin: 0 1em 2em 1em; 
+}
+th, td {
+	border: 1px solid #69c;
+	padding: .3em;
+}
+th {
+	background-color: #f2f9ff;
+	border-width: 2px;
+}
+caption {
+	font-size: 1em;
+	font-weight: bold;
+	padding: 1em 0 .5em 0;
+}
+html>body caption { font-size: 1.2em; }
+
+
+
+/* =============== */
+/* --- Imatges --- */
+/* =============== */
+#main img {
+	border: 1px solid #69c;
+	margin: 20px 0;
+}
+
+.figura {
+	position: relative; top: -20px;
+	color: #555;
+	font-size: .8em;
+}
+
+
+
+/* =============== */
+/* --- Llistes --- */
+/* =============== */
+ul, ol {
+	margin: .2em 0 .8em 5em;
+	padding: 0;
+}
+ol li { margin: .2em 0; }
+
+ul li {
+	list-style-image: url("../imatges/punt_llista_blue.gif");
+	list-style-type: disc;
+	margin: .4em 0;
+}
+
+li span.codi {
+	color: maroon;
+	font-family: "Courier New", monospace;
+}
+
+.titolLlista {
+	font-size: 1.1em;
+	font-weight: bold;
+	margin-left: 5em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+	padding-bottom: .4em;
+	border-bottom: 3px solid #69c;
+}
+
+ol.index { /* menús de cada secció */
+	color: #69c; /* pels bullets (números) */
+	font-weight: bold;
+	margin-left: 8em;
+}
+
+
+
+
+/* ============ */
+/* --- Links ---*/
+/* ============ */
+a {
+	text-decoration: none;
+	color: #069;
+}
+a:hover { text-decoration: underline; }
+
+
+
+
+/* ================================== */
+/* --- Codi i comentaris del codi --- */
+/* ================================== */
+pre.codi {
+	color: #000; /* ?¿? needed?*/
+	background-color: #c6e1ff;
+	border: 1px solid;
+	font-family: "Courier New", monospace;
+	font-size: 1em;
+	padding: 15px;
+	margin: 30px 0 30px 40px;
+}
+
+pre.codi2 { /* fragments adicionals de codi (menys importants) */
+	color: #000;
+	border: 1px solid #ddd;
+	font-family: "Courier New", monospace;
+	font-size: 1em;
+	padding: 15px;
+	margin: 30px 0 30px 40px;
+}
+
+.resultat { /* visualització d'un exemlpe */
+	color: #000; /* ?¿? needed? */
+	background-color: #eee;
+	padding: 30px;
+	margin: 2em 50px;
+	font-family: "Courier New", monospace;
+	font-size: 1em;
+}
+
+pre.codi .comentari, pre.codi2 .comentari { color: teal; } /* en el codi */
+
+.exempleHTML {
+	color: maroon; /* change to code */
+	margin: 1.5em 20px;
+	font-family: "Courier New", monospace;
+	text-indent: 0;
+}
+
+pre.exempleHTML { font-size: 1em; } /* per ajustar font-size (?¿?) */
+
+/* TODO: do I need font-size: 1em; for all code blocks? (<pre> problems) */
+
+
+
+/* ========================= */
+/* --- Tipus de paràgraf --- */
+/* ========================= */
+p.comentari {
+	color: #345883;
+	font-family: Verdana;
+	font-size: .8em;
+	text-indent: 0;
+	margin: -20px 50px 30px 50px;
+}
+
+p.pseudocodi {
+	color: #345883;
+	font-family: "Lucida Console", "Courier New", monospace;
+	text-indent: 0;
+	margin: 1.5em 20px;
+}
+
+p.nota {
+	color: #777;
+	font-size: .9em;
+	text-indent: 0;
+	margin: 2em 120px 2em 80px;
+}
+
+p.nota .element, p.nota .propietat {
+	color: #000;
+	font-family: "Courier New", monospace;
+	font-weight: normal;
+}
+
+p.properaseccio {
+	border-top: 1px solid;
+	font-style: italic;
+	padding-top: 5px;
+	margin-top: 30px;
+}
+
+p.tancarFinestra { /* Per als exemples externs. A extingir. */
+	color: #f2f9ff;
+	text-align:center;
+	padding: 30px;
+}
+a.tancarFinestra, a.tancarFinestra:active, a.tancarFinestra:visited, a.tancarFinestra:hover { color: #f2f9ff; } /* ?¿? why? */
+
+
+
+
+/* ==================================================== */
+/* --- ELEMENTS, PROPIETATS, paraules CLAU, UNITATS --- */
+/* ==================================================== */
+.element {
+	color: navy; /* TODO: to color code */
+	font-family: "Courier New", monospace;
+	font-weight: bold;
+}
+
+.propietat {
+	color: navy;
+	font-family: "Courier New", monospace;
+}
+
+.propietat-primera { /* primera aparició! */
+	color: #06c;
+	background-color: #f2f9ff;
+	border-top: 1px solid #b2b9bf; border-bottom: 1px solid #b2b9bf;
+	font-family: "Courier New", monospace;
+	padding: 0 3px;
+	margin: 0 3px;
+}
+
+.clau { /* Keywords: x-small, center ... */
+	color: teal;
+	font-family: Verdana;
+}
+
+.unitat {
+	color: maroon;
+	font-family: "Courier New", monospace;
+}
+
+.tipus { /* Tipus de propietats: padding, border... */
+	color: gray;
+	font-family: Verdana;
+	font-weight: bolder;
+}
+
+	
+/* en .codi i .codi2 */
+.codi .element, .codi2 .element {
+	color: #406b97;
+	font-weight: bold;
+}
+.codi .propietat, .codi2 .propietat {
+	color: #5c8bba;
+	font-weight: bold;
+}
+
+.propietat-tipus-codi { /* cap:0_5 - ha de represntar l'estil de [.codi .propietat] */
+	color:#5c8bba;
+	font-family: "Courier New", monospace;
+}
+
+/* en p.comentari */
+p.comentari .element, p.comentari .propietat {
+	color: #345883;
+	font-size: 1.1em;
+}
+
+p.comentari .propietat { font-weight: bold; }
+
+/* en .exempleHTML */
+.exempleHTML .element, .exempleHTML .propietat {
+	color: maroon;
+	font-weight: bold;
+}
+
+
+
+
+/* ================================== */
+/* --- Altres selectors de classe --- */
+/* ================================== */
+
+.referencia { background-color: #eee; } /* links cap a 'lenght', 'color', 'percentages'... */
+.pendent { color: #999; }
+.primera-vegada { margin-top: 1em; } /* primer d'un seguit de títols amb més 'margin-top' */
+.smiley {
+	color: #339;
+	font-family: Tahoma;
+}
+span.css2 {
+	color: teal;
+	background-color: #ddd;
+	border: 1px solid gray; border-style: solid none;
+	font-size: .8em;
+}
+h3 span.css2 { margin-left: 20px; } /* per si s'ha d'ajustar */
+
+
+
+
+/* ============================ */
+/* --- Selectors per la ToC --- */
+/* ============================ */
+#toc li, #toc li a:hover { color: #069; }
+#toc li a { color: #000; }
+
+
+
+/* ========================= */
+/* --- Pregunta i Pop-up --- */
+/* ========================= */
+div.pregunta {
+	background-color: #f2f9ff;
+	border-top: 1px solid #c6e1ff;
+	border-bottom: 1px solid #c6e1ff;
+	padding: 1px 15px 15px 15px;
+}
+div.pregunta p.pregunta { /* correspon al text 'Pregunta' */
+	color: #5c8bba;
+	font-weight: bold;
+}
+div.pregunta pre.codi { /* si la pregunta conté codi */
+	background-color: #fff;
+	border-color: #c6e1ff;
+}
+div.popup  { /* hidden or not; in 'layout' style sheet */
+	background-color: #d6eaff;
+	border: 3px solid navy;
+	padding: 15px;
+}
+div.popup hr {
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+div.pregunta a.solucio, div.popup a.tancar {
+	color: #5c8bba;
+	text-decoration: underline;
+}
+
+
+
+/* ==== */
+/* Menu */
+/* ==== */
+
+/* header, footer */
+#header, #footer { background-color: #78b5f1; }
+
+#header a, #footer a {
+	color: #69c;
+	background-color: #9cf;
+	font-weight: bold;
+}
+#header a:hover, #footer a:hover {
+	color: #80a;
+	background-color: #c4b7f9;
+	text-decoration: none;
+}
+
+/* "Logo" colors */
+#txtCSS { color: #69c; cursor: default; }
+#txtEnCatala { color: #bee3ff; cursor: default; }
+
+/* Navigation buttons colors */
+.navPrev a, .navNext a, .navTOC a {
+	border-color: #69c;
+	font-size: 1.6em;
+}
+.navPrev a:hover, .navNext a:hover, .navTOC a:hover {	border-color: #80a; }
+
+.menuGral {
+	color: #69c;
+	background-color: #9cf;
+	border-color: #69c;
+	font-size: 1.2em;
+}
+.menuGral a { border: 1px solid #9cf; }
+.menuGral a:hover { border-color: #80a; }
+.menuGral .titol {
+	color: #9cf;
+	background-color: #69c;
+	font-weight: bold;
+	cursor: default;
+	padding: 2px;
+}
+
+.menuSkin {
+	color: #69c;
+	background-color: #9cf;
+	border-color: #69c;
+	font-size: 1.2em;
+}
+.menuSkin .titol {
+	color: #9cf;
+	background-color: #69c;
+	font-weight: bold;
+	cursor: default;
+	padding: 2px;
+	margin-bottom: 3px;
+}
+select {
+	color: #3871a9;
+	background-color: #bfdfff;
+}
+.menuLang input {
+	color: #69c;
+	background-color: #9cf;
+	border: 1px dashed #69c;
+	font-weight: bold;
+	cursor: pointer;
+}
+.menuLang input:hover {
+	color: #80a;
+	background-color: #c4b7f9;
+	border: 1px solid #80a;
+}
+
+
+/* Link cap al següent capítol (DIV) */
+#capSeguent {
+	background-color: #f2f9ff;
+	border-color: #69c;
+}
+#capSeguent a { font-style: italic; }
+#capSeguent a:hover { color: #80a; }
+#capSeguent a.seccio { text-transform: uppercase; } /* al darrer capítol d'una secció */
+
+/* Div's principals */
+#main { border-color: #78b5f1; }
+
+#main2 {
+	background-color: #fff;
+	border-color: #3f5f7f;
+}
+
+/* Div de peu de pàgina */
+#footer2 {
+	color: #3f5f7f;
+	background-color: #78b5f1;
+	border-color: #3f5f7f;
+}
+} /* Tanca media */
+/* Local override for GH Pages */
+#selectSkin, #selectIdiom, .menuSkin, .menuLang, .menuGral { display: none !important; }
