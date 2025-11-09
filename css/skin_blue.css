@@ -508,4 +508,4 @@ select {
 }
 } /* Tanca media */
 /* Local override for GH Pages */
-#selectSkin, #selectIdiom, .menuSkin, .menuLang, .menuGral { display: none !important; }
+#selectSkin, #selectIdiom, .menuSkin, .menuLang, .menuGral, .footer2 { display: none !important; }
