@@ -1,0 +1,108 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Exemple 1-1</title>
+<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+<link rel="stylesheet" type="text/css" href="../css/skin_blue.css" />
+<link rel="stylesheet" type="text/css" href="../css/layout_original.css" />
+
+<style type="text/css"><!--
+div.a {
+padding: 30px;
+font-size: 15px;
+background-color: #eef2ff; }
+
+p.b {
+font-family: Arial; font-size: 2em; color: navy;
+text-indent: 0px;
+text-align: center; }
+--></style>
+
+
+</head>
+
+
+
+<body>
+
+
+<div id="menu1">
+<span id="menuCSS">CSS
+<span id="encatala">en català</span></span>
+<b>Exemple 1-1</b> &nbsp;&nbsp;Un exemple d'<i>style sheet</i> senzill
+</div>
+
+
+<div id="principal">
+<div id="principal2">
+
+<pre class="codi">
+<span class="element">&lt;STYLE&gt;</span> &lt;!--
+
+<span class="comentari">/* =====================================
+   Exemple elemental de style sheet
+   Autor: Gonzalo Pérez de la Ossa
+   =====================================*/
+
+/* Aquest style sheet està sobrecarregat de
+   comentaris, només per servir d'exemple. */</span>
+
+
+<span class="element">BODY</span> {
+<span class="propietat">margin</span>: 30px;
+<span class="propietat">font-family</span>: Verdana; <span class="propietat">font-size</span>: 15px;
+<span class="propietat">background-color</span>: #EEF2FF; }
+
+<span class="comentari">/* Jo acostumo a agrupar en una línia les propietats
+   que estan relacionades, però recordeu separar-les
+   sempre per punt i coma. */</span>
+
+
+
+<span class="element">H1</span> {
+<span class="propietat">font-family</span>: Arial; <span class="propietat">color</span>: navy;
+<span class="propietat">text-align</span>: center; }
+
+
+
+<span class="element">P</span> {                  <span class="comentari">/* La propietat text-indent permet sagnar */</span>
+<span class="propietat">text-indent</span>: 20px; } <span class="comentari">/* la primera línia de cada paràgraf */
+
+
+
+/* P i H1 tindran també les propietats definides pel selector
+   BODY, excepte la font dels títols H1, que està sobreescrita. */</span>
+
+--&gt; <span class="element">&lt;/STYLE&gt;</span>
+</pre>
+
+<p>Et proposo a continuació un document HTML que utilitza aquest CSS, però seria millor si tu mateix intentéssis fer-ne un de nou. Fins i tot podries intentar crear el teu propi <i>style sheet</i> i així experimentar quin resultat obtens aplicant els diferents estils. Ah, només escric el BODY, però segur que no tens cap dubte sobre com incorporar-hi l'<i>style sheet</i>. Si cal revisa la Secció 1 apartat 3, '<a href="../curscss.php?seccio=1&amp;capitol=3">Associar <i>style sheets</i> a un document HTML: Linking i Embedding</a>'.</p>
+
+<p class="exempleHTML">
+&lt;BODY&gt;<br /><br />
+&lt;H1&gt;Un exemple d'&lt;I&gt;style sheet&lt;/I&gt; senzill&lt;/H1&gt;<br /><br />	
+&lt;P&gt;Aquest és un exemple de CSS  que il·lustra l'ús de comentaris i de sentències simples. Per exemple, aquest paràgraf té la propietat text-indent: 20px, i per això la primera línia es veu sagnada.&lt;/P&gt;<br /><br />
+&lt;P&gt;El principal objectiu d'aquest exemple és veure com s'utilitzen tant els comentaris CSS com els comentaris HTML. Aquests darrers serveixen per evitar que els navegadors més antics mostrin el codi de l'&lt;I&gt;style sheet&lt;/I&gt; a la pantalla.&lt;/P&gt;<br /><br />
+&lt;/BODY&gt;
+</p>
+
+<br /><br />
+<p>El resultat és el següent:</p>
+
+
+<div class="a">
+<p class="b">Un exemple de <i>style sheet</i> senzill</p>
+
+<p>Aquest és un exemple de CSS que il·lustra l'ús de comentaris i de sentències simples. Per exemple, aquest paràgraf té la propietat text-indent: 20px, i per això la primera línia es veu sagnada.</p>
+
+<p>El principal objectiu d'aquest exemple és veure com s'utilitzen tant els comentaris CSS com els comentaris HTML. Aquests darrers serveixen per evitar que els navegadors més antics mostrin el codi de l'<i>style sheet</i> a la pantalla.</p>
+</div>
+
+</div>	<!-- FI "principal2" -->
+</div>	<!-- FI "principal" -->
+
+<p class="tancarFinestra">- <a class="tancarFinestra" href="javascript:close()">Tancar</a> -</p>
+
+</body>
+</html>

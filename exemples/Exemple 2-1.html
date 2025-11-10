@@ -1,0 +1,102 @@
+<html>
+
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+	<title>Exemple 2-1</title>
+<meta name="Author" content="Gonzalo Pérez de la Ossa" />
+<link rel="stylesheet" type="text/css" href="../css/skin_blue.css" />
+<link rel="stylesheet" type="text/css" href="../css/layout_original.css" />
+
+<style type="text/css"><!--
+
+A { text-decoration: none; }
+:visited { color: olive; }
+:active { color: green; }
+
+:hover { text-decoration: underline; }
+A.menu:hover { text-decoration: underline overline; }
+P#titol A:hover {
+border-style: solid; border-width:1px;
+padding:4px;
+text-decoration: none; }
+
+--></style>
+
+</head>
+
+
+<body>
+
+<div id="menu1">
+<span id="menuCSS">CSS
+<span id="encatala">en català</span></span>
+<b>Exemple 2-2</b> &nbsp;&nbsp;Selectors pseudoclasse: links
+</div>
+
+<div id="principal">
+<div id="principal2">
+
+<p>Et recordo quin era el contingut de l'<i>style sheet</i>:</p>
+
+<pre class="codi">
+<span class="element">A</span> { text-decoration: none }
+<span class="element">:visited</span> { color: olive }
+<span class="element">:active</span> { color: green }
+
+<span class="element">:hover</span> { text-decoration: underline }
+
+<span class="element">A.menu:hover</span> {
+text-decoration: underline overline }
+
+P#titol <span class="element">A:hover</span> {
+border-style: solid; border-width:1px; padding:4px;
+text-decoration: none }
+</pre>
+
+<br /><br />
+<p>I aquest és el codi HTML que veuràs:</p>
+
+<p class="exempleHTML">
+&lt;P id="titol"&gt;<br />
+&nbsp;&nbsp;&nbsp;Això és un element P amb id="titol".<br />
+&nbsp;&nbsp;&nbsp;Conté un &lt;A href=""&gt;link&lt;/A&gt;.<br />
+&lt;/P&gt;<br /><br />
+
+&lt;DIV align="center"&gt;<br />
+&nbsp;&nbsp;&nbsp;&lt;A href="" class="menu"&gt;inici&lt;/A&gt; |<br />
+&nbsp;&nbsp;&nbsp;&lt;A href="" class="menu"&gt;contacte&lt;/A&gt; |<br />
+&nbsp;&nbsp;&nbsp;&lt;A href="" class="menu"&gt;links&lt;/A&gt;<br />
+&lt;/DIV&gt;<br /><br />
+
+&lt;P&gt;I per acabar, un paràgraf amb links 'normals',<br />
+com ara &lt;A href=""&gt;aquest&lt;/A&gt;.&lt;/P&gt;
+</p>
+
+<br /><br />
+<p>I finalment, el resultat obtingut:</p>
+
+
+<div class="resultat">
+<p id="titol">
+   Això és un element P amb id="titol".
+   Conté un <a href="#trash">link</a>.
+</p><br />
+
+<div align="center">
+   <a href="#trash" class="menu">inici</a> |
+   <a href="#trash" class="menu">contacte</a> |
+   <a href="#trash" class="menu">links</a>
+</div><br />
+
+<a name="trash"></a>
+<p>I per acabar, un paràgraf amb links 'normals',
+com ara <a href="#trash">aquest</a>.</p>
+</div>
+
+</div>	<!-- FI "principal2" -->
+</div>	<!-- FI "principal" -->
+
+<p class="tancarFinestra">- <a class="tancarFinestra" href="javascript:close()">Tancar</a> -</p>
+
+</body>
+</html>
